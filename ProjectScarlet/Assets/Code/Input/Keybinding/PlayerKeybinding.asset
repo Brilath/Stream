@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e893edf8a7925c46bd0d0b2307edebe, type: 3}
+  m_Name: PlayerKeybinding
+  m_EditorClassIdentifier: 
+  _keybindings:
+  - _name: Forward
+    _key: 119
+  - _name: Right
+    _key: 100
+  - _name: Backward
+    _key: 115
+  - _name: Left
+    _key: 97
+  - _name: Jump
+    _key: 32
+  - _name: Sprint
+    _key: 304
+  - _name: Basic Attack
+    _key: 323
+  - _name: Alternative Attack
+    _key: 324
+  - _name: Skill One
+    _key: 49
+  - _name: Skill Two
+    _key: 50
+  - _name: Skill Three
+    _key: 51
+  - _name: Ultimate
+    _key: 52
+  _forward:
+    _name: Forward
+    _key: 119
+  _right:
+    _name: Right
+    _key: 100
+  _backward:
+    _name: Backward
+    _key: 115
+  _left:
+    _name: Left
+    _key: 97
+  _jump:
+    _name: Jump
+    _key: 32
+  _sprint:
+    _name: Sprint
+    _key: 304
+  _basicAttack:
+    _name: Basic Attack
+    _key: 323
+  _alternativeAttack:
+    _name: Alternative Attack
+    _key: 324
+  _skillOne:
+    _name: Skill One
+    _key: 49
+  _skillTwo:
+    _name: Skill Two
+    _key: 50
+  _skillThree:
+    _name: Skill Three
+    _key: 51
+  _ultimate:
+    _name: Ultimate
+    _key: 52
