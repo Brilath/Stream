@@ -72,17 +72,32 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300066, guid: b69174d668ba02d44b14a084b217670a, type: 3}
-    - target: {fileID: 5727090609057110237, guid: 211dd99df3d5dba479fdaef86ee60c39,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5727090609057138343, guid: 211dd99df3d5dba479fdaef86ee60c39,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5727090609057110237, guid: 211dd99df3d5dba479fdaef86ee60c39,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5727090609057133901, guid: 211dd99df3d5dba479fdaef86ee60c39,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405939054487201705, guid: 211dd99df3d5dba479fdaef86ee60c39,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405939054487088373, guid: 211dd99df3d5dba479fdaef86ee60c39,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405939054487081947, guid: 211dd99df3d5dba479fdaef86ee60c39,
         type: 3}
       propertyPath: m_IsActive
       value: 1

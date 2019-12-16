@@ -15,7 +15,7 @@ public class AttackPath : MonoBehaviour
         _transform = GetComponent<Transform>();
     }
 
-    private void OnDrawGizmos() 
+    private void OnDrawGizmosSelected() 
     {
         Gizmos.color = _color;
 

@@ -89,31 +89,31 @@
     <None Include="Assets\PolygonNature\Shaders\SyntyStudios_LOD.shader" />
     <None Include="Assets\PolygonNature\Shaders\SyntyStudios_SkyGradient.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>G:/GitHub/ProjectScarlet/ProjectScarlet/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>G:/GitHub/ProjectScarlet/ProjectScarlet/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>G:/GitHub/ProjectScarlet/ProjectScarlet/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>G:/GitHub/ProjectScarlet/ProjectScarlet/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>G:/GitHub/ProjectScarlet/ProjectScarlet/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>G:/GitHub/ProjectScarlet/ProjectScarlet/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>G:/GitHub/ProjectScarlet/ProjectScarlet/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>G:/GitHub/ProjectScarlet/ProjectScarlet/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>G:/GitHub/ProjectScarlet/ProjectScarlet/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>G:/Program Files/Unity/2019.2.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
