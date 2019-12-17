@@ -18,6 +18,11 @@ namespace ProjectScarlet
         {
             _motor = GetComponent<NPCMotor>();    
             _transform = GetComponent<Transform>();
+            if (_path == null)
+            {
+                _path = new AttackPath();
+            }
+
 
             _currentWaypoint = 0;
         }
@@ -53,6 +58,9 @@ namespace ProjectScarlet
         private bool  AtWaypoint()
         {
             bool _atWaypoint = false;
+
+            if (_path == null) return true;
+
             float distanceToWaypoint = Vector3.Distance(_transform.position, _path.GetWayPoint(_currentWaypoint));
 
             if(distanceToWaypoint <= _waypointLeeway)

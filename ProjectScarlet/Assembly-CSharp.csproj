@@ -71,12 +71,14 @@
     <Compile Include="Assets\Code\Character\Character.cs" />
     <Compile Include="Assets\Code\Input\Commands\Commands.cs" />
     <Compile Include="Assets\Code\Input\InputController\AIInputController.cs" />
+    <Compile Include="Assets\Code\Input\InputController\ArcherController.cs" />
     <Compile Include="Assets\Code\Input\InputController\PlayerInputController.cs" />
     <Compile Include="Assets\Code\Input\Keybinding\Keybind.cs" />
     <Compile Include="Assets\Code\Input\Keybinding\PlayerKeybinding.cs" />
     <Compile Include="Assets\Code\Input\Path\AttackPath.cs" />
     <Compile Include="Assets\Code\Interfaces\ICharacterInput.cs" />
     <Compile Include="Assets\Code\Interfaces\ICommand.cs" />
+    <Compile Include="Assets\Code\Motor\ArcherMotor.cs" />
     <Compile Include="Assets\Code\Motor\CharacterMotor.cs" />
     <Compile Include="Assets\Code\Motor\NPCMotor.cs" />
     <Compile Include="Assets\Code\Settings\CharacterSettings.cs" />

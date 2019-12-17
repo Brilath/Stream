@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1559197480658067981
+--- !u!1001 &8461501924226345961
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 788768616244845420, guid: 211dd99df3d5dba479fdaef86ee60c39,
         type: 3}
       propertyPath: m_Name
-      value: NPC_Human_Caster
+      value: NPC_Human_Melee
       objectReference: {fileID: 0}
     - target: {fileID: 9061601609496010821, guid: 211dd99df3d5dba479fdaef86ee60c39,
         type: 3}
@@ -67,27 +67,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5405939054487201705, guid: 211dd99df3d5dba479fdaef86ee60c39,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5405939054487128823, guid: 211dd99df3d5dba479fdaef86ee60c39,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5405939054487113507, guid: 211dd99df3d5dba479fdaef86ee60c39,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2076755999442023552, guid: 211dd99df3d5dba479fdaef86ee60c39,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2076755999441862656, guid: 211dd99df3d5dba479fdaef86ee60c39,
+    - target: {fileID: 2076755999441851896, guid: 211dd99df3d5dba479fdaef86ee60c39,
         type: 3}
       propertyPath: m_IsActive
       value: 1
