@@ -8,13 +8,15 @@ namespace ProjectScarlet
     {
         [SerializeField] private List<GameObject> npcs;
 
-        [SerializeField] private float spawnCooldown =  15f;
-        [SerializeField] private float spawnCountdown;
+        [SerializeField] private float _spawnCooldown =  15f;
+        [SerializeField] private float _spawnCountdown;
         [SerializeField] private AttackPath _attackPath;
+        [SerializeField] private bool _spawnOnce = false;
+        [SerializeField] private bool _canSpawn = true;
 
         private void Awake() 
         {
-            spawnCountdown = spawnCooldown;
+            //_spawnCountdown = _spawnCooldown;
             _attackPath = GetComponentInChildren<AttackPath>();
         }
 
@@ -27,13 +29,18 @@ namespace ProjectScarlet
         // Update is called once per frame
         void Update()
         {
-            spawnCountdown -= Time.deltaTime;
+            if (!_canSpawn) return;
 
-            if(spawnCountdown <= 0)
+            _spawnCountdown -= Time.deltaTime;
+
+            if(_spawnCountdown <= 0)
             {
                 StartCoroutine(Spawn());
-                spawnCountdown = spawnCooldown;
-            }
+                _spawnCountdown = _spawnCooldown;
+
+                if (_spawnOnce)
+                    _canSpawn = false;
+            }            
         }
 
         private IEnumerator Spawn()

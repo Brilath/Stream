@@ -69,6 +69,9 @@
     <Compile Include="Assets\Code\Camera\Orbit.cs" />
     <Compile Include="Assets\Code\Camera\SphericalVector.cs" />
     <Compile Include="Assets\Code\Character\Character.cs" />
+    <Compile Include="Assets\Code\Character\CharacterBaseStats.cs" />
+    <Compile Include="Assets\Code\Character\CharacterClass.cs" />
+    <Compile Include="Assets\Code\Combat\Damage.cs" />
     <Compile Include="Assets\Code\Input\Commands\Commands.cs" />
     <Compile Include="Assets\Code\Input\InputController\AIInputController.cs" />
     <Compile Include="Assets\Code\Input\InputController\ArcherController.cs" />
@@ -81,7 +84,10 @@
     <Compile Include="Assets\Code\Motor\ArcherMotor.cs" />
     <Compile Include="Assets\Code\Motor\CharacterMotor.cs" />
     <Compile Include="Assets\Code\Motor\NPCMotor.cs" />
+    <Compile Include="Assets\Code\Resources\Health.cs" />
+    <Compile Include="Assets\Code\Settings\CharacterProgression.cs" />
     <Compile Include="Assets\Code\Settings\CharacterSettings.cs" />
+    <Compile Include="Assets\Code\Settings\ProgressCharacterClass.cs" />
     <Compile Include="Assets\Code\Spawner\Spawner.cs" />
     <None Include="Assets\PolygonNature\Shaders\SyntyStudios_Trees.shader" />
     <None Include="Assets\PolygonNature\Shaders\VS_indirect.cginc" />

@@ -7,14 +7,14 @@ public class ArcherMotor : MonoBehaviour
 
     [SerializeField] private float _turnSpeed = 10f;
     [SerializeField] private Vector3 _target;
-    [SerializeField] private Vector3 _orginalRotation;
+    [SerializeField] private Quaternion _orginalRotation;
     [SerializeField] private Vector3 _lookAt;
     [SerializeField] private Transform _transform;
 
     private void Awake()
     {
         _transform = GetComponent<Transform>();
-        _orginalRotation = _transform.position;
+        _orginalRotation = _transform.rotation;
     }
 
     void Update()
@@ -25,16 +25,19 @@ public class ArcherMotor : MonoBehaviour
             Rotate(_lookAt);
         }
         else
-        {
-            _lookAt = _orginalRotation - transform.position;
-            Rotate(_lookAt);
-        }
+        {            
+            Rotate(_orginalRotation);
+        }        
     }
 
     private void Rotate(Vector3 lookAt)
     {
         lookAt.y = 0;
         _transform.rotation = Quaternion.Slerp(_transform.rotation, Quaternion.LookRotation(lookAt), _turnSpeed * Time.deltaTime);
+    }
+    private void Rotate(Quaternion lookAt)
+    {
+        _transform.rotation = Quaternion.Slerp(_transform.rotation, lookAt, _turnSpeed * Time.deltaTime);
     }
 
     public void SetTarget(Vector3 target)
