@@ -30,6 +30,13 @@ public class ArcherMotor : MonoBehaviour
         }        
     }
 
+    private void FixedUpdate()
+    {
+        Vector3 startPosition = new Vector3(_transform.position.x, _transform.position.y + 2f, transform.position.z);
+
+        Debug.DrawRay(startPosition, _lookAt, Color.red);
+    }
+
     private void Rotate(Vector3 lookAt)
     {
         lookAt.y = 0;

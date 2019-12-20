@@ -8,6 +8,8 @@ namespace ProjectScarlet
         [SerializeField] private float _currentHealth = 1f;
 
         public event Action OnDeath = delegate { };
+        public event Action OnDamage = delegate { };
+        public event Action OnHeal = delegate { };
 
         private void Start()
         {
@@ -18,11 +20,20 @@ namespace ProjectScarlet
         {
             _currentHealth = Mathf.Max(_currentHealth - damage, 0);
 
-            if(_currentHealth == 0)
+            OnDamage();
+
+            if (_currentHealth == 0)
             {
                 Debug.Log("Help I died");
                 OnDeath();
             }
+        }
+
+        public void Heal(float healAmount)
+        {
+            _currentHealth = Mathf.Min(_currentHealth + healAmount, GetBaseHealth());
+
+            OnHeal();
         }
 
         public float GetPercentage()

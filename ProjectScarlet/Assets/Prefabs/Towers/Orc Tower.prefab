@@ -1,52 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!135 &8569344349059961808
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6363657126297665146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: -2.23, z: 0}
---- !u!114 &838917720242976293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6363657126297665146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f002a5f5fae51a14bb056ea88d9e1606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _turnSpeed: 10
-  _target: {x: 0, y: 0, z: 0}
-  _orginalRotation: {x: 0, y: 0, z: 0}
-  _lookAt: {x: 0, y: 0, z: 0}
-  _transform: {fileID: 0}
---- !u!114 &3339413454074614051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6363657126297665146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c40073a13dfc727458f36c4bfa754ee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targets: []
-  newTarget: {x: 0, y: 0, z: 0}
-  currentTarget: {fileID: 0}
-  _motor: {fileID: 0}
-  attackRange: 10
 --- !u!1001 &828304053971287057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -194,13 +147,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8401216671431382740, guid: ca4e1d5b7b3b14441b7d485bab1e81f8, type: 3}
-    - {fileID: 8401216671431382314, guid: ca4e1d5b7b3b14441b7d485bab1e81f8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca4e1d5b7b3b14441b7d485bab1e81f8, type: 3}
---- !u!1 &6363657126297665146 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2654880535251787076, guid: ca4e1d5b7b3b14441b7d485bab1e81f8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8973501110678643518}
-  m_PrefabAsset: {fileID: 0}

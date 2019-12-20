@@ -6,49 +6,73 @@ public class ArcherController : MonoBehaviour
 {
 
     [SerializeField] private List<Transform> _targets = new List<Transform>();
-    [SerializeField] private Vector3 newTarget;
-    [SerializeField] private Transform currentTarget;
+    [SerializeField] private Transform _transform;
+    [SerializeField] private Vector3 _newTarget;
+    [SerializeField] private Transform _currentTarget;
     [SerializeField] private ArcherMotor _motor;
-    [SerializeField] private float attackRange = 10f;
+    [SerializeField] private float _attackRange = 10f;
+    [SerializeField] private LayerMask _attackLayer;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        _transform = GetComponent<Transform>();
         _motor = GetComponent<ArcherMotor>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currentTarget != null && _targets.Count > 0)
-        {
-            newTarget = currentTarget.position;
-        }
-        if (currentTarget == null && _targets.Count > 0)
-        {
-            currentTarget = _targets[0];
-            newTarget = currentTarget.position;
-        }
-        if(_targets.Count == 0)
-        {
-            currentTarget = null;
-            newTarget = Vector3.zero;
-        }
+        SetTarget();
 
-        _motor.SetTarget(newTarget);
+        _motor.SetTarget(_newTarget);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
     {
-        if (other.gameObject.tag == "NPC" || other.gameObject.tag == "Player")
+        RefreshTargets();
+    }
+
+    private void SetTarget()
+    {
+        if (_currentTarget != null && _targets.Count > 0)
         {
-            _targets.Add(other.transform);
-            currentTarget = other.transform;
+            _newTarget = _currentTarget.position;
+        }
+        if (_currentTarget == null && _targets.Count > 0)
+        {
+            _currentTarget = _targets[0];
+            _newTarget = _currentTarget.position;
+        }
+        if (_targets.Count == 0)
+        {
+            _currentTarget = null;
+            _newTarget = Vector3.zero;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void RefreshTargets()
     {
-        _targets.Remove(other.transform);
+        Collider[] enemies = Physics.OverlapSphere(_transform.position, _attackRange, _attackLayer);
+
+        _targets.Clear();
+
+        foreach(Collider enemy in enemies)
+        {
+            _targets.Add(enemy.transform);
+        }
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "NPC" || other.gameObject.tag == "Player")
+    //    {
+    //        _targets.Add(other.transform);
+    //        _currentTarget = other.transform;
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    _targets.Remove(other.transform);
+    //}
 }
