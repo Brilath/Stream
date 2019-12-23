@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7211086332778699533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256625817650919777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bbf75712da08c4c9076254b1388788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftHand: {fileID: 680464987645222433}
+  _rightHand: {fileID: 680464987645193327}
+  _bothHand: {fileID: 0}
+  _currentWeapon: {fileID: 11400000, guid: 3262b1eaeeae70c42b3d81ced1ca50ba, type: 2}
+  _spawnedWeapon: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!1001 &1559197480658067981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -819,3 +837,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 211dd99df3d5dba479fdaef86ee60c39, type: 3}
+--- !u!1 &2256625817650919777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 788768616244845420, guid: 211dd99df3d5dba479fdaef86ee60c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 1559197480658067981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &680464987645222433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2076755999441681452, guid: 211dd99df3d5dba479fdaef86ee60c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 1559197480658067981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &680464987645193327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2076755999441571426, guid: 211dd99df3d5dba479fdaef86ee60c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 1559197480658067981}
+  m_PrefabAsset: {fileID: 0}

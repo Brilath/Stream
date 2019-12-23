@@ -23,7 +23,7 @@ namespace ProjectScarlet
 
         private void Update()
         {
-            Vector3 middleOfTarget = new Vector3(_target.position.x, _target.position.y + 2f, _target.position.z);
+            Vector3 middleOfTarget = new Vector3(_target.position.x, _target.GetComponent<Collider>().bounds.center.y, _target.position.z);
             _transform.position = Vector3.MoveTowards(_transform.position, middleOfTarget, _missileSpeed * Time.deltaTime);
         }
 

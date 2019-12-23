@@ -43,6 +43,15 @@ namespace ProjectScarlet
                 }
             }
 
+            if(Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Animator anim =GetComponentInChildren<Animator>();
+                if(anim != null)
+                {
+                    anim.SetTrigger("attack");
+                }
+            }
+
             settings.MoveDirection = SetMoveDirection();
         }
 

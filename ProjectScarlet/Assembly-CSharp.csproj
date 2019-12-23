@@ -72,8 +72,12 @@
     <Compile Include="Assets\Code\Character\CharacterBaseStats.cs" />
     <Compile Include="Assets\Code\Character\CharacterClass.cs" />
     <Compile Include="Assets\Code\Combat\Damage.cs" />
+    <Compile Include="Assets\Code\Combat\Fighter.cs" />
     <Compile Include="Assets\Code\Combat\Heal.cs" />
     <Compile Include="Assets\Code\Combat\Missile.cs" />
+    <Compile Include="Assets\Code\Combat\Weapons\MeleeWeapon.cs" />
+    <Compile Include="Assets\Code\Combat\Weapons\Weapon.cs" />
+    <Compile Include="Assets\Code\Combat\Weapons\WeaponHand.cs" />
     <Compile Include="Assets\Code\Input\Commands\Commands.cs" />
     <Compile Include="Assets\Code\Input\InputController\AIInputController.cs" />
     <Compile Include="Assets\Code\Input\InputController\ArcherController.cs" />
