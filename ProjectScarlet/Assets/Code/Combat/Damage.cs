@@ -13,7 +13,7 @@ namespace ProjectScarlet
 
             if (targetHealth != null)
             {
-                targetHealth.TakeDamage(_damage);    
+                targetHealth.ModifyHealth(-_damage);    
             }
         }
     }

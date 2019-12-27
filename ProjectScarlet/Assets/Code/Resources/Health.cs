@@ -5,7 +5,14 @@ namespace ProjectScarlet
 {
     public class Health : MonoBehaviour
     {
+        public static event Action<Health> OnHealthAdded = delegate { };
+        public static event Action<Health> OnHealthRemoved = delegate { };
+
         [SerializeField] private float _currentHealth = 1f;
+
+        public float CurrentHealth {  get { return _currentHealth; } private set { _currentHealth = value;  } }
+
+        public event Action<float> OnHealthPctChange = delegate { };
 
         public event Action OnDeath = delegate { };
         public event Action OnDamage = delegate { };
@@ -13,32 +20,47 @@ namespace ProjectScarlet
 
         private void Start()
         {
-            _currentHealth = GetBaseHealth();
+            SetupHealth();
         }
 
-        public void TakeDamage(float damage)
+        private void OnEnable()
         {
-            _currentHealth = Mathf.Max(_currentHealth - damage, 0);
+            SetupHealth();
+        }
 
-            OnDamage();
+        public void SetupHealth()
+        {
+            CurrentHealth = GetBaseHealth();
+            OnHealthAdded(this);
+        }
 
-            if (_currentHealth == 0)
+        public void ModifyHealth(float amount)
+        {
+            CurrentHealth += amount;
+
+            float currentHealthPercent = CurrentHealth / GetBaseHealth();
+
+            OnHealthPctChange(currentHealthPercent);
+
+            if(CurrentHealth <= 0)
             {
-                Debug.Log("Help I died");
+                OnHealthRemoved(this);
                 OnDeath();
+                Destroy(this.gameObject);
             }
-        }
-
-        public void Heal(float healAmount)
-        {
-            _currentHealth = Mathf.Min(_currentHealth + healAmount, GetBaseHealth());
-
-            OnHeal();
+            if(amount > 0)
+            {
+                OnHeal();
+            }
+            if(amount < 0)
+            {
+                OnDamage();
+            }
         }
 
         public float GetPercentage()
         {
-            return _currentHealth / GetBaseHealth();
+            return CurrentHealth / GetBaseHealth();
         }
 
         private float GetBaseHealth()

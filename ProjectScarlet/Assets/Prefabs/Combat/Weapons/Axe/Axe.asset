@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   _attackRange: 2
-  _attackSpeed: 1
+  _attackSpeed: 1.5
+  _nextAttack: 0
   _weaponName: New Weapon
   _weaponHand: 0
   _weaponType: 0
@@ -21,4 +22,7 @@ MonoBehaviour:
     type: 3}
   _animatorController: {fileID: 22100000, guid: 9c8a355eb90be2247bbe95a67e2155cb,
     type: 2}
+  _attackLayer:
+    serializedVersion: 2
+    m_Bits: 1536
   _weaponDamage: 15

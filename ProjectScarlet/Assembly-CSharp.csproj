@@ -95,6 +95,8 @@
     <Compile Include="Assets\Code\Settings\CharacterSettings.cs" />
     <Compile Include="Assets\Code\Settings\ProgressCharacterClass.cs" />
     <Compile Include="Assets\Code\Spawner\Spawner.cs" />
+    <Compile Include="Assets\Code\UI\HealthBar.cs" />
+    <Compile Include="Assets\Code\UI\HealthBarController.cs" />
     <Compile Include="Assets\Code\UI\UIController.cs" />
     <None Include="Assets\PolygonNature\Shaders\SyntyStudios_Trees.shader" />
     <None Include="Assets\PolygonNature\Shaders\VS_indirect.cginc" />

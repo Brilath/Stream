@@ -15,7 +15,7 @@ namespace ProjectScarlet
 
             if(health != null)
             {
-                health.Heal(_healAmount);
+                health.ModifyHealth(_healAmount);
             }
         }
     }

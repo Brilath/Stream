@@ -48,7 +48,15 @@ namespace ProjectScarlet
                 Animator anim =GetComponentInChildren<Animator>();
                 if(anim != null)
                 {
-                    anim.SetTrigger("attack");
+                    
+                    Weapon currentWeapon = GetComponent<Fighter>().CurrentWeapon;
+                    if (currentWeapon.CanAttack())
+                    {
+                        anim.SetTrigger("attack");
+                        GameObject spawnedWeapon = GetComponent<Fighter>().SpawnedWeapon;
+                        Transform attackPoint = spawnedWeapon.GetComponentInChildren<Transform>();
+                        currentWeapon.Attack(attackPoint);
+                    }
                 }
             }
 
