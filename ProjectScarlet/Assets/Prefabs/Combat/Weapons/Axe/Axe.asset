@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7297ba293ecb61b4492d0bbdfb579f85, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  _attackRange: 2
+  _attackRange: 3
   _attackSpeed: 1.5
   _nextAttack: 0
-  _weaponName: New Weapon
+  _delayTime: 0
+  _weaponName: Axe
   _weaponHand: 0
   _weaponType: 0
   _weaponPrefab: {fileID: 3712332746729684394, guid: e194788afc1cfe64f934511e2fa44cba,
@@ -25,4 +26,4 @@ MonoBehaviour:
   _attackLayer:
     serializedVersion: 2
     m_Bits: 1536
-  _weaponDamage: 15
+  _weaponDamage: 25

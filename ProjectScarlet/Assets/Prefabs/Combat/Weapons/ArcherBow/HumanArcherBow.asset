@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865a814c20791c54685375664fa0567e, type: 3}
+  m_Name: HumanArcherBow
+  m_EditorClassIdentifier: 
+  _attackRange: 2
+  _attackSpeed: 1
+  _nextAttack: 5.086467
+  _delayTime: 1.5
+  _weaponName: Human Archer Bow
+  _weaponHand: 1
+  _weaponType: 1
+  _weaponPrefab: {fileID: 4991880186042558988, guid: 408fc52a1ec501049a22d8d711dc7bec,
+    type: 3}
+  _animatorController: {fileID: 22100000, guid: e786d4c3b9ffedf45abd91bdb6066c04,
+    type: 2}
+  _attackLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _projectile: {fileID: 2289551172464551821, guid: e6b709c63e2e71646a60ac3c2a8f4ff0,
+    type: 3}
+  _weaponAnim: {fileID: 0}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ProjectScarlet
 {
-    public class Missile : MonoBehaviour
+    public class OldMissile : MonoBehaviour
     {
         [SerializeField] private float _missileSpeed = 5f;
         [SerializeField] private float _damage = 10f;

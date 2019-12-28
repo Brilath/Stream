@@ -33,7 +33,8 @@ namespace ProjectScarlet
 
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(_attackPoint.position, CurrentWeapon.AttackRange);
+            if(_attackPoint != null)
+                Gizmos.DrawWireSphere(_attackPoint.position, CurrentWeapon.AttackRange);
         }
     }
 }

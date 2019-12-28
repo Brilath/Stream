@@ -8,16 +8,18 @@ namespace ProjectScarlet
         [SerializeField] private float _attackRange;
         [SerializeField] private float _attackSpeed;
         [SerializeField] private float _nextAttack;
+        [SerializeField] private float _delayTime;
         [SerializeField] private string _weaponName;
         [SerializeField] private WeaponHand _weaponHand;
         [SerializeField] private WeaponType _weaponType;
         [SerializeField] private GameObject _weaponPrefab;
         [SerializeField] private AnimatorOverrideController _animatorController;
-        [SerializeField] private LayerMask _attackLayer;
+        [SerializeField] private LayerMask _attackLayer;        
 
         public float AttackRange { get { return _attackRange; } set { _attackRange = value; } }
         public float AttackSpeed { get { return _attackSpeed; } set { _attackSpeed = value; } }
         public float NextAttack { get { return _nextAttack; } set { _nextAttack = value; } }
+        public float DelayTime { get { return _delayTime; } set { _delayTime = value; } }
         public string WeaponName { get { return _weaponName; } set { _weaponName = value; } }
         public WeaponHand Hand { get { return _weaponHand; } set { _weaponHand = value; } }
         public WeaponType Type { get { return _weaponType; } set { _weaponType = value; } }
@@ -29,8 +31,7 @@ namespace ProjectScarlet
         {
             AttackRange = 2f;
             AttackSpeed = 1f;
-            WeaponName = "New Weapon";
-            NextAttack = 0f;
+            WeaponName = "New Weapon";            
         }
 
         public abstract void Attack(Transform attackPoint);
@@ -43,8 +44,9 @@ namespace ProjectScarlet
         public GameObject Spawn(Transform rightHand, Transform leftHand, Animator animator)
         {
             GameObject spawnedWeapon = null;
+            NextAttack = 0f;
 
-            if(WeaponPrefab != null)
+            if (WeaponPrefab != null)
             {
                 Transform equipHand = GetWeaponHand(rightHand, leftHand);
                 spawnedWeapon = Instantiate(WeaponPrefab, equipHand);

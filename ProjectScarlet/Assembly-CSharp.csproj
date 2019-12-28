@@ -74,8 +74,12 @@
     <Compile Include="Assets\Code\Combat\Damage.cs" />
     <Compile Include="Assets\Code\Combat\Fighter.cs" />
     <Compile Include="Assets\Code\Combat\Heal.cs" />
-    <Compile Include="Assets\Code\Combat\Missile.cs" />
+    <Compile Include="Assets\Code\Combat\OldMissile.cs" />
+    <Compile Include="Assets\Code\Combat\Projectiles\Bullet.cs" />
+    <Compile Include="Assets\Code\Combat\Projectiles\Missile.cs" />
+    <Compile Include="Assets\Code\Combat\Projectiles\Projectile.cs" />
     <Compile Include="Assets\Code\Combat\Weapons\MeleeWeapon.cs" />
+    <Compile Include="Assets\Code\Combat\Weapons\RangedWeapon.cs" />
     <Compile Include="Assets\Code\Combat\Weapons\Weapon.cs" />
     <Compile Include="Assets\Code\Combat\Weapons\WeaponHand.cs" />
     <Compile Include="Assets\Code\Input\Commands\Commands.cs" />

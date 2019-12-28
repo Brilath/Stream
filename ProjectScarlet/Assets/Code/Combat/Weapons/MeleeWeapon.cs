@@ -12,6 +12,7 @@ namespace ProjectScarlet
         {
             WeaponDamage = 15;
             Type = WeaponType.Melee;
+            NextAttack = 0;
         }
 
         public override void Attack(Transform attackPoint)
@@ -34,7 +35,7 @@ namespace ProjectScarlet
                 }
             }
 
-            NextAttack = Time.time + AttackSpeed;
+            //NextAttack = Time.time + AttackSpeed;
         }
     }
 }

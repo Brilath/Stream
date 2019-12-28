@@ -14,6 +14,9 @@ namespace ProjectScarlet
         [SerializeField] private Transform _transform;
         [SerializeField] private bool isJumping;
         [SerializeField] private bool isSprinting;
+        [SerializeField] private bool canMove;
+
+        public bool CanMove { get { return canMove; } set { canMove = value; } }
 
         private void Awake() 
         {
@@ -21,6 +24,7 @@ namespace ProjectScarlet
             _rigidbody = GetComponent<Rigidbody>();
             _collider = GetComponent<CapsuleCollider>();
             _transform = GetComponent<Transform>();
+            CanMove = true;
         }
 
         void Start()
@@ -35,21 +39,35 @@ namespace ProjectScarlet
                 _settings.CurrentSpeed = Mathf.MoveTowards(_settings.CurrentSpeed, _settings.MaxSpeed, ChangeMoveSpeed()/2);
             else
                 _settings.CurrentSpeed = Mathf.MoveTowards(_settings.CurrentSpeed, 0f, ChangeMoveSpeed());
+
+            //_transform.position = Vector3.MoveTowards(_transform.position, 
+            //    _settings.MoveDirection + transform.position, ChangeMoveSpeed());
+
+            //_transform.Translate(_settings.MoveDirection * Time.deltaTime, Space.World);
+
+            //float xLerp = Mathf.Lerp(_transform.position.x, _transform.position.x + _settings.MoveDirection.x, Time.deltaTime);
+            //float yLerp = Mathf.Lerp(_transform.position.y, _transform.position.y + _settings.MoveDirection.y, Time.deltaTime);
+            //float zlerp = Mathf.Lerp(_transform.position.z, _transform.position.z +_settings.MoveDirection.z, Time.deltaTime);
+
+            //_transform.position = new Vector3(xLerp, yLerp, zlerp);
         }
 
         private void FixedUpdate() 
         {
             Vector3 velocity = _rigidbody.velocity;
             float rotationChangeSpeed = _settings.RotationSpeed * Time.deltaTime;
-            
-            velocity.x = Mathf.MoveTowards(velocity.x, _settings.MoveDirection.x, ChangeMoveSpeed());
-            velocity.y = Mathf.MoveTowards(velocity.y, _settings.VerticalDirection, ChangeMoveSpeed());
-            velocity.z = Mathf.MoveTowards(velocity.z, _settings.MoveDirection.z, ChangeMoveSpeed());
-            
-            //Debug.Log($"Velocity * Speed: {velocity * _settings.CurrentSpeed}");
-            _rigidbody.velocity = velocity;
 
-            if(_settings.MoveDirection.magnitude > 0.1)
+            if (CanMove)
+            {
+                velocity.x = Mathf.MoveTowards(velocity.x, _settings.MoveDirection.x, ChangeMoveSpeed());
+                velocity.y = Mathf.MoveTowards(velocity.y, _settings.VerticalDirection, ChangeMoveSpeed());
+                velocity.z = Mathf.MoveTowards(velocity.z, _settings.MoveDirection.z, ChangeMoveSpeed());
+
+                //Debug.Log($"Velocity * Speed: {velocity * _settings.CurrentSpeed}");
+                _rigidbody.velocity = velocity;
+            }
+
+            if (_settings.MoveDirection.magnitude > 0.1)
             {
                 _transform.rotation = Quaternion.Slerp(_transform.rotation, Quaternion.LookRotation(_settings.MoveDirection), rotationChangeSpeed);
             }
@@ -98,6 +116,11 @@ namespace ProjectScarlet
         public void Move()
         {   
             
+        }
+
+        public void Stop()
+        {
+            _rigidbody.velocity = Vector3.zero;
         }
 
         public void ToggleSprint()

@@ -6492,6 +6492,7 @@ MonoBehaviour:
   _transform: {fileID: 0}
   isJumping: 0
   isSprinting: 0
+  canMove: 0
 --- !u!136 &1286860768
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6564,7 +6565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6217fad841638489bd13e520fb9da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingLevel: 6
+  _startingLevel: 2
   _currentLevel: 0
   _characterClass: 0
   _progression: {fileID: 11400000, guid: d0833d8188e8bf543833e59b6ca658b5, type: 2}
@@ -6584,7 +6585,7 @@ MonoBehaviour:
   _rightHand: {fileID: 380272373}
   _bothHand: {fileID: 380272373}
   _attackPoint: {fileID: 0}
-  _currentWeapon: {fileID: 11400000, guid: ca7a2c189b56d824d8a42ba36339e091, type: 2}
+  _currentWeapon: {fileID: 11400000, guid: e4118e524dcba3f4eacbb6cea7414a14, type: 2}
   _spawnedWeapon: {fileID: 0}
   _animator: {fileID: 0}
 --- !u!1001 &1336153393
@@ -9604,7 +9605,7 @@ PrefabInstance:
     - target: {fileID: 2845179358243759203, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 121.93
+      value: 88.3
       objectReference: {fileID: 0}
     - target: {fileID: 2845179358243759203, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}
@@ -9614,7 +9615,7 @@ PrefabInstance:
     - target: {fileID: 2845179358243759203, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 266.84
+      value: 47.5
       objectReference: {fileID: 0}
     - target: {fileID: 2845179358243759203, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}
@@ -10220,6 +10221,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463780318535097046, guid: 607e7a4c76df00d449eaf58488ff74b6,
+        type: 3}
+      propertyPath: viewDistance
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 607e7a4c76df00d449eaf58488ff74b6, type: 3}

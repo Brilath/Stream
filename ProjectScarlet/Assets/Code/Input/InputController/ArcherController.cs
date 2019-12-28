@@ -2,77 +2,103 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcherController : MonoBehaviour
+namespace ProjectScarlet
 {
-
-    [SerializeField] private List<Transform> _targets = new List<Transform>();
-    [SerializeField] private Transform _transform;
-    [SerializeField] private Vector3 _newTarget;
-    [SerializeField] private Transform _currentTarget;
-    [SerializeField] private ArcherMotor _motor;
-    [SerializeField] private float _attackRange = 10f;
-    [SerializeField] private LayerMask _attackLayer;
-
-    private void Awake()
+    public class ArcherController : MonoBehaviour
     {
-        _transform = GetComponent<Transform>();
-        _motor = GetComponent<ArcherMotor>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        SetTarget();
+        [SerializeField] private List<Transform> _targets = new List<Transform>();
+        [SerializeField] private Transform _transform;
+        [SerializeField] private Vector3 _newTarget;
+        [SerializeField] private Transform _currentTarget;
+        [SerializeField] private ArcherMotor _motor;
+        [SerializeField] private float _attackRange = 10f;
+        [SerializeField] private LayerMask _attackLayer;
+        [SerializeField] private Fighter _fighter;
+        [SerializeField] private Animator _animator;
 
-        _motor.SetTarget(_newTarget);
-    }
-
-    private void FixedUpdate()
-    {
-        RefreshTargets();
-    }
-
-    private void SetTarget()
-    {
-        if (_currentTarget != null && _targets.Count > 0)
+        private void Awake()
         {
-            _newTarget = _currentTarget.position;
+            _transform = GetComponent<Transform>();
+            _motor = GetComponent<ArcherMotor>();
+            _fighter = GetComponent<Fighter>();
+            _animator = GetComponentInChildren<Animator>();
         }
-        if (_currentTarget == null && _targets.Count > 0)
+
+        // Update is called once per frame
+        void Update()
         {
-            _currentTarget = _targets[0];
-            _newTarget = _currentTarget.position;
+            SetTarget();
+
+            _motor.SetTarget(_newTarget);
+
+            if (_currentTarget != null)
+            {
+                RangedWeapon currentWeapon = _fighter.CurrentWeapon as RangedWeapon;
+                if (currentWeapon.CanAttack())
+                {
+                    _animator.SetTrigger("attack");
+                    StartCoroutine(AttackDelay(currentWeapon.DelayTime, currentWeapon));
+                }
+            }
         }
-        if (_targets.Count == 0)
+
+        private void FixedUpdate()
         {
-            _currentTarget = null;
-            _newTarget = Vector3.zero;
+            RefreshTargets();
+        }
+
+
+        private IEnumerator AttackDelay(float seconds, RangedWeapon weapon)
+        {
+            Debug.Log("Before Attack delay");
+
+            GameObject spawnedWeapon = GetComponent<Fighter>().SpawnedWeapon;
+
+            Animator weaponAnimator = spawnedWeapon.GetComponent<Animator>();
+            if (weaponAnimator != null)
+            {
+                weaponAnimator.SetTrigger("attack");
+            }
+
+            Transform attackPoint = spawnedWeapon.GetComponentInChildren<Transform>();
+            weapon.NextAttack = Time.time + weapon.AttackSpeed;
+
+            yield return new WaitForSeconds(seconds);
+
+            Debug.Log("Attack delay over");
+            weapon.Projectile_.Target = _currentTarget;
+            weapon.Attack(attackPoint);
+        }
+
+        private void SetTarget()
+        {
+            if (_currentTarget != null && _targets.Count > 0)
+            {
+                _newTarget = _currentTarget.position;
+            }
+            if (_currentTarget == null && _targets.Count > 0)
+            {
+                _currentTarget = _targets[0];
+                _newTarget = _currentTarget.position;
+            }
+            if (_targets.Count == 0)
+            {
+                _currentTarget = null;
+                _newTarget = Vector3.zero;
+            }
+        }
+
+        private void RefreshTargets()
+        {
+            Collider[] enemies = Physics.OverlapSphere(_transform.position, _attackRange, _attackLayer);
+
+            _targets.Clear();
+
+            foreach (Collider enemy in enemies)
+            {
+                _targets.Add(enemy.transform);
+            }
         }
     }
-
-    private void RefreshTargets()
-    {
-        Collider[] enemies = Physics.OverlapSphere(_transform.position, _attackRange, _attackLayer);
-
-        _targets.Clear();
-
-        foreach(Collider enemy in enemies)
-        {
-            _targets.Add(enemy.transform);
-        }
-    }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.tag == "NPC" || other.gameObject.tag == "Player")
-    //    {
-    //        _targets.Add(other.transform);
-    //        _currentTarget = other.transform;
-    //    }
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    _targets.Remove(other.transform);
-    //}
 }

@@ -52,15 +52,37 @@ namespace ProjectScarlet
                     Weapon currentWeapon = GetComponent<Fighter>().CurrentWeapon;
                     if (currentWeapon.CanAttack())
                     {
-                        anim.SetTrigger("attack");
-                        GameObject spawnedWeapon = GetComponent<Fighter>().SpawnedWeapon;
-                        Transform attackPoint = spawnedWeapon.GetComponentInChildren<Transform>();
-                        currentWeapon.Attack(attackPoint);
+                        anim.SetTrigger("attack");                        
+                        StartCoroutine(AttackDelay(currentWeapon.DelayTime, currentWeapon));                        
                     }
                 }
             }
 
             settings.MoveDirection = SetMoveDirection();
+        }
+
+        private IEnumerator AttackDelay(float seconds, Weapon weapon)
+        {
+            Debug.Log("Before Attack delay");
+            motor.CanMove = false;
+            motor.Stop();
+
+            GameObject spawnedWeapon = GetComponent<Fighter>().SpawnedWeapon;
+
+            Animator weaponAnimator = spawnedWeapon.GetComponent<Animator>();
+            if (weaponAnimator != null)
+            {
+                weaponAnimator.SetTrigger("attack");
+            }
+
+            Transform attackPoint = spawnedWeapon.GetComponentInChildren<Transform>();
+            weapon.NextAttack = Time.time + weapon.AttackSpeed;
+
+            yield return new WaitForSeconds(seconds);
+
+            Debug.Log("Attack delay over");
+            weapon.Attack(attackPoint);
+            motor.CanMove = true;
         }
 
         private Vector3 SetMoveDirection()
