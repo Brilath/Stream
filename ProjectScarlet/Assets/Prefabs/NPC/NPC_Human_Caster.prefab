@@ -27,8 +27,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startingLevel: 1
   _currentLevel: 0
-  _characterClass: 0
-  _progression: {fileID: 11400000, guid: d0833d8188e8bf543833e59b6ca658b5, type: 2}
+  _characterClass: 5
+  _progression: {fileID: 11400000, guid: fc8fd012dc685374e989c9b225a00c33, type: 2}
 --- !u!1001 &8461501924226345961
 PrefabInstance:
   m_ObjectHideFlags: 0

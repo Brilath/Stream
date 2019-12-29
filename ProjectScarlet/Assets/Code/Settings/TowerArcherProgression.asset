@@ -10,41 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1630d0af4e3ac5449ce2a03d14cc093, type: 3}
-  m_Name: WarrirorProgress
+  m_Name: TowerArcherProgression
   m_EditorClassIdentifier: 
   _progressionClasses:
-    characterClass: 0
+    characterClass: 6
     health:
     - 100
-    - 110
-    - 120
-    - 130
-    - 140
     - 150
-    - 160
-    - 170
-    - 180
-    - 190
-    - 200
-    - 210
-    - 220
-    - 230
-    - 240
-    - 300
-    experience:
-    - 10
-    - 20
-    - 30
-    - 40
-    - 50
-    - 60
-    - 70
-    - 80
-    - 90
-    - 100
-    - 110
-    - 120
-    - 130
-    - 140
-    - 150
-    - 200
+    experience: []

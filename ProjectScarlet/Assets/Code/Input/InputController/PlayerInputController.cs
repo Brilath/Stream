@@ -10,12 +10,14 @@ namespace ProjectScarlet
         [SerializeField] private PlayerKeybinding keybinding;
         [SerializeField] private CharacterSettings settings;
         [SerializeField] private CharacterMotor motor;
+        [SerializeField] private Fighter _fighter;
         private Camera playerCamera;
 
         private void Awake()
         {
             playerCamera = Camera.main;
             motor = GetComponent<CharacterMotor>();
+            _fighter = GetComponent<Fighter>();
         }
 
         // Start is called before the first frame update
@@ -49,10 +51,16 @@ namespace ProjectScarlet
                 if(anim != null)
                 {
                     
-                    Weapon currentWeapon = GetComponent<Fighter>().CurrentWeapon;
-                    if (currentWeapon.CanAttack())
+                    Weapon currentWeapon = _fighter.CurrentWeapon;
+                    if (_fighter.CanAttack())
                     {
-                        anim.SetTrigger("attack");                        
+                        var oldRotation = transform.rotation;
+
+                        Debug.Log($"Y Rotation: {transform.rotation.y}");
+                        anim.SetTrigger("attack");
+                        //transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, 
+                        //    transform.rotation.y + 90f, transform.rotation.z));
+                        transform.rotation *=  Quaternion.Euler(0, currentWeapon.TransformRotationOffset, 0);
                         StartCoroutine(AttackDelay(currentWeapon.DelayTime, currentWeapon));                        
                     }
                 }
@@ -67,7 +75,7 @@ namespace ProjectScarlet
             motor.CanMove = false;
             motor.Stop();
 
-            GameObject spawnedWeapon = GetComponent<Fighter>().SpawnedWeapon;
+            GameObject spawnedWeapon = _fighter.SpawnedWeapon;
 
             Animator weaponAnimator = spawnedWeapon.GetComponent<Animator>();
             if (weaponAnimator != null)
@@ -76,12 +84,14 @@ namespace ProjectScarlet
             }
 
             Transform attackPoint = spawnedWeapon.GetComponentInChildren<Transform>();
-            weapon.NextAttack = Time.time + weapon.AttackSpeed;
-
+            _fighter.NextAttack = Time.time + weapon.AttackSpeed;
+            
             yield return new WaitForSeconds(seconds);
 
             Debug.Log("Attack delay over");
             weapon.Attack(attackPoint);
+
+            transform.rotation *= Quaternion.Euler(0, -weapon.TransformRotationOffset, 0);
             motor.CanMove = true;
         }
 

@@ -7,8 +7,8 @@ namespace ProjectScarlet
 
         [SerializeField] private float _attackRange;
         [SerializeField] private float _attackSpeed;
-        [SerializeField] private float _nextAttack;
         [SerializeField] private float _delayTime;
+        [SerializeField] private float _transformRotation;
         [SerializeField] private string _weaponName;
         [SerializeField] private WeaponHand _weaponHand;
         [SerializeField] private WeaponType _weaponType;
@@ -18,8 +18,8 @@ namespace ProjectScarlet
 
         public float AttackRange { get { return _attackRange; } set { _attackRange = value; } }
         public float AttackSpeed { get { return _attackSpeed; } set { _attackSpeed = value; } }
-        public float NextAttack { get { return _nextAttack; } set { _nextAttack = value; } }
         public float DelayTime { get { return _delayTime; } set { _delayTime = value; } }
+        public float TransformRotationOffset { get { return _transformRotation; } set { _transformRotation = value; } }
         public string WeaponName { get { return _weaponName; } set { _weaponName = value; } }
         public WeaponHand Hand { get { return _weaponHand; } set { _weaponHand = value; } }
         public WeaponType Type { get { return _weaponType; } set { _weaponType = value; } }
@@ -36,15 +36,10 @@ namespace ProjectScarlet
 
         public abstract void Attack(Transform attackPoint);
 
-        public bool CanAttack()
-        {
-            return Time.time > NextAttack;
-        }
 
         public GameObject Spawn(Transform rightHand, Transform leftHand, Animator animator)
         {
             GameObject spawnedWeapon = null;
-            NextAttack = 0f;
 
             if (WeaponPrefab != null)
             {

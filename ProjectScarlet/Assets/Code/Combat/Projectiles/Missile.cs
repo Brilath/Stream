@@ -26,18 +26,17 @@ namespace ProjectScarlet
 
         public override void Launch(Transform launchPostition)
         {
-            //GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
         }
 
         public void Launch(Transform launchPostition, Transform target)
         {
             Target = target;
-            //GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
         }
 
         private void Update()
         {
-            if (Target == null) return;
+            if (Target == null) Destroy(gameObject);
+            
             if (_targetCollider == null) SetTargetCollider();
 
             Vector3 middleOfTarget = new Vector3(Target.position.x, _targetCollider.bounds.center.y, Target.position.z);

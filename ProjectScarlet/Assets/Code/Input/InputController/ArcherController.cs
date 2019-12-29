@@ -35,9 +35,10 @@ namespace ProjectScarlet
             if (_currentTarget != null)
             {
                 RangedWeapon currentWeapon = _fighter.CurrentWeapon as RangedWeapon;
-                if (currentWeapon.CanAttack())
+                if (_fighter.CanAttack())
                 {
                     _animator.SetTrigger("attack");
+                    transform.rotation *= Quaternion.Euler(0, 90, 0);
                     StartCoroutine(AttackDelay(currentWeapon.DelayTime, currentWeapon));
                 }
             }
@@ -51,8 +52,6 @@ namespace ProjectScarlet
 
         private IEnumerator AttackDelay(float seconds, RangedWeapon weapon)
         {
-            Debug.Log("Before Attack delay");
-
             GameObject spawnedWeapon = GetComponent<Fighter>().SpawnedWeapon;
 
             Animator weaponAnimator = spawnedWeapon.GetComponent<Animator>();
@@ -62,13 +61,13 @@ namespace ProjectScarlet
             }
 
             Transform attackPoint = spawnedWeapon.GetComponentInChildren<Transform>();
-            weapon.NextAttack = Time.time + weapon.AttackSpeed;
+            _fighter.NextAttack = Time.time + weapon.AttackSpeed;
 
             yield return new WaitForSeconds(seconds);
 
-            Debug.Log("Attack delay over");
             weapon.Projectile_.Target = _currentTarget;
             weapon.Attack(attackPoint);
+            transform.rotation *= Quaternion.Euler(0, -90, 0);
         }
 
         private void SetTarget()

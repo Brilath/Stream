@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orc Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 2951160091415107325, guid: 9bdd043a6f886d448a02da07eee3ddbd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8980078593896694496, guid: 9bdd043a6f886d448a02da07eee3ddbd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,6 +71,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933980297826692936, guid: 9bdd043a6f886d448a02da07eee3ddbd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5933980297824730686, guid: 9bdd043a6f886d448a02da07eee3ddbd,
         type: 3}

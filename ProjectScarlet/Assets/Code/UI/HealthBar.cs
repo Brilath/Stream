@@ -27,7 +27,7 @@ namespace ProjectScarlet
         }
 
         private void HandleHealthChange(float pct)
-        {
+        {           
             StartCoroutine(ChangeToPct(pct));
         }
 

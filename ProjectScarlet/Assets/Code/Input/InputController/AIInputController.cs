@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace ProjectScarlet
@@ -12,6 +13,14 @@ namespace ProjectScarlet
 
         [SerializeField] private int _currentWaypoint;
         [SerializeField] private float _waypointLeeway = 1f;
+        [SerializeField] private LayerMask _attackLayer;
+        [SerializeField] private Fighter _fighter;
+        [SerializeField] private Transform _target;
+        [SerializeField] private float _chaseRange = 5f;
+        [SerializeField] private Animator _animator;
+
+        private bool _isAttacking;
+        private bool _isNavigating;
 
 
         private void Awake() 
@@ -23,7 +32,10 @@ namespace ProjectScarlet
                 _path = new AttackPath();
             }
 
+            _fighter = GetComponent<Fighter>();
+            _animator = GetComponentInChildren<Animator>();
 
+            _isNavigating = true;
             _currentWaypoint = 0;
         }
 
@@ -37,22 +49,64 @@ namespace ProjectScarlet
         void Update()
         {
             //Vector3 destination = new Vector3(_transform.position.x + 1, _transform.position.y, _transform.position.z);
+            if (_target == null)
+                WaypointBehaviour();
+            else
+                AttackBehaviour();
 
-            if(AtWaypoint())
+        }
+
+        void FixedUpdate()
+        {
+            if(_target == null)
+                RefreshTarget();
+        }
+
+        private void AttackBehaviour()
+        {
+            _motor.MoveTo(_target.position);
+            Vector3 _lookAt = _target.position - _transform.position;
+            _motor.RotateTowards(_lookAt);
+
+            float distance = Vector3.Distance(_transform.position, _target.position);
+
+            if (distance <= _fighter.CurrentWeapon.AttackRange 
+                && _fighter.CanAttack())
+            {
+                _animator.SetTrigger("attack");
+                Transform attackPoint = _fighter.SpawnedWeapon.GetComponentInChildren<Transform>();
+                _fighter.CurrentWeapon.Attack(attackPoint);
+                _fighter.NextAttack = Time.time + _fighter.CurrentWeapon.AttackSpeed;
+            }
+        }
+
+        private void WaypointBehaviour()
+        {
+            if (AtWaypoint())
             {
                 _currentWaypoint = _path.GetNextWaypoint(_currentWaypoint);
             }
 
             Vector3 destination = _path.GetWayPoint(_currentWaypoint);
 
-            if(AtWaypoint())
+            if (AtWaypoint())
             {
                 _motor.Stop();
             }
             else
             {
                 _motor.MoveTo(destination);
-            }            
+            }
+        }
+
+        private void RefreshTarget()
+        {
+            Collider[] enemies = Physics.OverlapSphere(_transform.position, _chaseRange, _attackLayer);
+            Debug.Log($"Targets in range: {enemies.Length}");
+            if (enemies.Length > 0)
+                _target = enemies[0].transform;
+            else
+                _target = null;             
         }
 
         private bool  AtWaypoint()

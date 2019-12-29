@@ -8,6 +8,6 @@
         Mage,
         NPCMelee,
         NPCCaster,
-        NPCAracher
+        NPCArcher
     }
 }

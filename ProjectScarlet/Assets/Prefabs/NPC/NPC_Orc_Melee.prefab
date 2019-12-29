@@ -1,5 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2838050403668902445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838137948631766299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6217fad841638489bd13e520fb9da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startingLevel: 1
+  _currentLevel: 1
+  _characterClass: 4
+  _progression: {fileID: 11400000, guid: 5542b6f87269b3d4684f269cbd473bb5, type: 2}
+--- !u!114 &3406895624890124715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838137948631766299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0fc4705730e254aaa12be2b10a4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHealth: 1
 --- !u!114 &8964412138828428190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,38 +44,11 @@ MonoBehaviour:
   _leftHand: {fileID: 7391694930467932524}
   _rightHand: {fileID: 7391694930467923244}
   _bothHand: {fileID: 0}
+  _attackPoint: {fileID: 0}
   _currentWeapon: {fileID: 11400000, guid: ca7a2c189b56d824d8a42ba36339e091, type: 2}
   _spawnedWeapon: {fileID: 0}
   _animator: {fileID: 0}
---- !u!114 &3406895624890124715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2838137948631766299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d0fc4705730e254aaa12be2b10a4f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealth: 1
---- !u!114 &2838050403668902445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2838137948631766299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6217fad841638489bd13e520fb9da8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _startingLevel: 1
-  _currentLevel: 0
-  _characterClass: 0
-  _progression: {fileID: 11400000, guid: d0833d8188e8bf543833e59b6ca658b5, type: 2}
+  _nextAttack: 0
 --- !u!1001 &3283497471715610231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125,6 +127,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8265437759954152889, guid: 462476a97edfa2f4f9fc81c24d46e58a,
         type: 3}
+    - target: {fileID: 6538484670328853250, guid: 211dd99df3d5dba479fdaef86ee60c39,
+        type: 3}
+      propertyPath: _attackLayer.m_Bits
+      value: 1536
+      objectReference: {fileID: 0}
     - target: {fileID: 2076755999442023552, guid: 211dd99df3d5dba479fdaef86ee60c39,
         type: 3}
       propertyPath: m_Layer

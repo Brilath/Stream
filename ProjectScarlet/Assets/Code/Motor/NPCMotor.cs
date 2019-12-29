@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
+using System;
 
 namespace ProjectScarlet
 {
     public class NPCMotor : MonoBehaviour
     {
         [SerializeField] private float _maxSpeed = 3.25f;
+        [SerializeField] private float _turnSpeed = 1000f;
 
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private Transform _transform;
@@ -39,11 +41,15 @@ namespace ProjectScarlet
             _navMeshAgent.isStopped = false;
         }
 
+        public void RotateTowards(Vector3 target)
+        {
+            _transform.rotation = Quaternion.Slerp(_transform.rotation, Quaternion.LookRotation(target), _turnSpeed * Time.deltaTime);
+        }
+
         public void Stop()
         {
             _navMeshAgent.isStopped = true;
             _navMeshAgent.speed = 0f;
         }
-
     }
 }

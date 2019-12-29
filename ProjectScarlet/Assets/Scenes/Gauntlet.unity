@@ -1072,7 +1072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &234402937
 Transform:
   m_ObjectHideFlags: 0
@@ -6522,6 +6522,7 @@ MonoBehaviour:
   keybinding: {fileID: 11400000, guid: be86af0faee8a264da02c74fb8f11309, type: 2}
   settings: {fileID: 11400000, guid: dfb23f2a8f21a59478b93d7a73af1cbe, type: 2}
   motor: {fileID: 0}
+  _fighter: {fileID: 0}
 --- !u!54 &1286860770
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6565,7 +6566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6217fad841638489bd13e520fb9da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingLevel: 2
+  _startingLevel: 1
   _currentLevel: 0
   _characterClass: 0
   _progression: {fileID: 11400000, guid: d0833d8188e8bf543833e59b6ca658b5, type: 2}
@@ -6585,9 +6586,10 @@ MonoBehaviour:
   _rightHand: {fileID: 380272373}
   _bothHand: {fileID: 380272373}
   _attackPoint: {fileID: 0}
-  _currentWeapon: {fileID: 11400000, guid: e4118e524dcba3f4eacbb6cea7414a14, type: 2}
+  _currentWeapon: {fileID: 11400000, guid: ca7a2c189b56d824d8a42ba36339e091, type: 2}
   _spawnedWeapon: {fileID: 0}
   _animator: {fileID: 0}
+  _nextAttack: 0
 --- !u!1001 &1336153393
 PrefabInstance:
   m_ObjectHideFlags: 0

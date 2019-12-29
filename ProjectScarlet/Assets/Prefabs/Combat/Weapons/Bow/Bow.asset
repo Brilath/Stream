@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackRange: 2
   _attackSpeed: 2.5
-  _nextAttack: 0
   _delayTime: 1.5
+  _transformRotation: 90
   _weaponName: Bow
   _weaponHand: 1
   _weaponType: 1

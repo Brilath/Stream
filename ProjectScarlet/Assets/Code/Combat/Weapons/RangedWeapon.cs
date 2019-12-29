@@ -10,13 +10,12 @@ namespace ProjectScarlet
     {
 
         [SerializeField] private Projectile _projectile;
-        [SerializeField] private Animator _weaponAnim;
+        [SerializeField] private Animator _weaponAnim;        
         public Projectile Projectile_ { get { return _projectile; } set { _projectile = value; } }
          
         public RangedWeapon()
         {
             Type = WeaponType.Ranged;
-            NextAttack = 0;
             DelayTime = 1.5f;
         }
 
@@ -24,8 +23,6 @@ namespace ProjectScarlet
         {
             var projectile = Instantiate(_projectile, attackPoint.position, attackPoint.rotation);
             projectile.Launch(attackPoint);
-
-            //NextAttack = Time.time + AttackSpeed;
         }
     }
 }
