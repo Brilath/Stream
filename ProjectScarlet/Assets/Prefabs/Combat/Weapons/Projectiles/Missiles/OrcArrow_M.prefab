@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _projectileSpeed: 25
-  _damage: 10
+  _damage: 30
   _transform: {fileID: 0}
   _attackLayers: 090000000a000000
   _targetCollider: {fileID: 0}

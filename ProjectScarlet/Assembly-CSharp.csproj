@@ -94,6 +94,7 @@
     <Compile Include="Assets\Code\Motor\ArcherMotor.cs" />
     <Compile Include="Assets\Code\Motor\CharacterMotor.cs" />
     <Compile Include="Assets\Code\Motor\NPCMotor.cs" />
+    <Compile Include="Assets\Code\Resources\Experience.cs" />
     <Compile Include="Assets\Code\Resources\Health.cs" />
     <Compile Include="Assets\Code\Settings\CharacterProgression.cs" />
     <Compile Include="Assets\Code\Settings\CharacterSettings.cs" />

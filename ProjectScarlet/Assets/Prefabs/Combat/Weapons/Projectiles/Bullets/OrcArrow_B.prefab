@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 751313109176810260}
   - component: {fileID: 8162805426033237073}
   m_Layer: 0
-  m_Name: OrcArrow
+  m_Name: OrcArrow_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6005833150698709638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,10 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcecf889a4934549b4a039085d1cfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _target: {fileID: 0}
   _projectileSpeed: 5
   _damage: 30
   _transform: {fileID: 0}
-  _target: {fileID: 0}
   _attackLayers: 090000000a000000
   _lifeSpan: 3
 --- !u!65 &8162805426033237073
@@ -126,5 +126,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3, z: 1}
+  m_Size: {x: 0.5, y: 0.5, z: 1}
   m_Center: {x: 0, y: -0.0011294484, z: 0.07406168}

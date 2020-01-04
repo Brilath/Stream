@@ -29,6 +29,10 @@ MonoBehaviour:
   _currentLevel: 0
   _characterClass: 4
   _progression: {fileID: 11400000, guid: 5542b6f87269b3d4684f269cbd473bb5, type: 2}
+  _health: {fileID: 0}
+  _grantExperienceLayer:
+    serializedVersion: 2
+    m_Bits: 1280
 --- !u!114 &7211086332778699533
 MonoBehaviour:
   m_ObjectHideFlags: 0

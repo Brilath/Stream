@@ -14,11 +14,23 @@ namespace ProjectScarlet
             if (_progressionClasses.characterClass == characterClass &&
                     (level > 0 && level < _progressionClasses.health.Length))
             {
-                Debug.Log($"Level: {level}....health {_progressionClasses.health[level - 1]}");
                 baseHealth = _progressionClasses.health[level - 1];
             }
 
             return baseHealth;
+        }
+
+        public float GetExperience(CharacterClass characterClass, int level)
+        {
+            float baseExperience = Mathf.Infinity;
+
+            if (_progressionClasses.characterClass == characterClass &&
+                    (level > 0 && level < _progressionClasses.health.Length))
+            {
+                baseExperience = _progressionClasses.experience[level - 1];
+            }
+
+            return baseExperience;
         }
     }
 }

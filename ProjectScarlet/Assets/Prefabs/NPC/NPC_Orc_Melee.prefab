@@ -16,6 +16,10 @@ MonoBehaviour:
   _currentLevel: 1
   _characterClass: 4
   _progression: {fileID: 11400000, guid: 5542b6f87269b3d4684f269cbd473bb5, type: 2}
+  _health: {fileID: 0}
+  _grantExperienceLayer:
+    serializedVersion: 2
+    m_Bits: 1536
 --- !u!114 &3406895624890124715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _attackLayer.m_Bits
       value: 1536
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538484670328852734, guid: 211dd99df3d5dba479fdaef86ee60c39,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2076755999442023552, guid: 211dd99df3d5dba479fdaef86ee60c39,
         type: 3}

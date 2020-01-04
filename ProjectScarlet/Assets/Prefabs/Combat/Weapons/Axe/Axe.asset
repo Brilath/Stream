@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackRange: 3
   _attackSpeed: 1.5
-  _nextAttack: 0
-  _delayTime: 0
+  _delayTime: 0.5
+  _transformRotation: 0
   _weaponName: Axe
   _weaponHand: 0
   _weaponType: 0

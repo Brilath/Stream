@@ -9,6 +9,8 @@ namespace ProjectScarlet
         public static event Action<Health> OnHealthRemoved = delegate { };
 
         [SerializeField] private float _currentHealth = 1f;
+        [SerializeField] private float _maxHealth;
+        [SerializeField] private Experience _experience;
 
         public float CurrentHealth {  get { return _currentHealth; } private set { _currentHealth = value;  } }
 
@@ -18,6 +20,16 @@ namespace ProjectScarlet
         public event Action OnDamage = delegate { };
         public event Action OnHeal = delegate { };
 
+        private void Awake()
+        {
+            _experience = GetComponent<Experience>();
+
+            if(_experience != null)
+            {
+                _experience.OnLevelUp += HandleLevelUp;
+            }
+        }
+
         private void Start()
         {
             SetupHealth();
@@ -26,6 +38,11 @@ namespace ProjectScarlet
         private void OnEnable()
         {
             SetupHealth();
+        }        
+
+        public void Update()
+        {
+            _maxHealth = GetBaseHealth();
         }
 
         public void SetupHealth()
@@ -37,6 +54,8 @@ namespace ProjectScarlet
         public void ModifyHealth(float amount)
         {
             CurrentHealth += amount;
+
+            CurrentHealth = Mathf.Clamp(CurrentHealth, 0, GetBaseHealth());
 
             float currentHealthPercent = CurrentHealth / GetBaseHealth();
 
@@ -56,6 +75,11 @@ namespace ProjectScarlet
             {
                 OnDamage();
             }
+        }
+
+        private void HandleLevelUp()
+        {
+            ModifyHealth(GetBaseHealth() - CurrentHealth);
         }
 
         public float GetPercentage()

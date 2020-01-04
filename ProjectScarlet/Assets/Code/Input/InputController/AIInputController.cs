@@ -22,7 +22,6 @@ namespace ProjectScarlet
         private bool _isAttacking;
         private bool _isNavigating;
 
-
         private void Awake() 
         {
             _motor = GetComponent<NPCMotor>();    
@@ -58,13 +57,12 @@ namespace ProjectScarlet
 
         void FixedUpdate()
         {
-            if(_target == null)
+            
                 RefreshTarget();
         }
 
         private void AttackBehaviour()
-        {
-            _motor.MoveTo(_target.position);
+        {            
             Vector3 _lookAt = _target.position - _transform.position;
             _motor.RotateTowards(_lookAt);
 
@@ -74,10 +72,36 @@ namespace ProjectScarlet
                 && _fighter.CanAttack())
             {
                 _animator.SetTrigger("attack");
-                Transform attackPoint = _fighter.SpawnedWeapon.GetComponentInChildren<Transform>();
-                _fighter.CurrentWeapon.Attack(attackPoint);
-                _fighter.NextAttack = Time.time + _fighter.CurrentWeapon.AttackSpeed;
+
+                StartCoroutine(AttackDelay(_fighter.CurrentWeapon));
             }
+            else if(distance > _fighter.CurrentWeapon.AttackRange)
+            {
+                _motor.MoveTo(_target.position);
+            }
+        }
+
+        private IEnumerator AttackDelay(Weapon weapon)
+        {
+            _motor.CanMove = false;
+            _motor.Stop();
+
+            GameObject spawnedWeapon = _fighter.SpawnedWeapon;
+
+            Animator weaponAnimator = spawnedWeapon.GetComponent<Animator>();
+            if (weaponAnimator != null)
+            {
+                weaponAnimator.SetTrigger("attack");
+            }
+
+            Transform attackPoint = spawnedWeapon.GetComponentInChildren<Transform>();
+            _fighter.NextAttack = Time.time + weapon.AttackSpeed;
+
+            yield return new WaitForSeconds(weapon.DelayTime);
+
+            weapon.Attack(attackPoint);
+
+            _motor.CanMove = true;
         }
 
         private void WaypointBehaviour()
@@ -101,8 +125,9 @@ namespace ProjectScarlet
 
         private void RefreshTarget()
         {
-            Collider[] enemies = Physics.OverlapSphere(_transform.position, _chaseRange, _attackLayer);
-            Debug.Log($"Targets in range: {enemies.Length}");
+            Collider[] enemies = Physics.OverlapSphere(_transform.position, 
+                    _fighter.CurrentWeapon.AttackRange, _attackLayer);
+
             if (enemies.Length > 0)
                 _target = enemies[0].transform;
             else

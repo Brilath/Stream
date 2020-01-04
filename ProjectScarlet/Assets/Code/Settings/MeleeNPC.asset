@@ -15,5 +15,7 @@ MonoBehaviour:
   _progressionClasses:
     characterClass: 4
     health:
-    - 100
+    - 200
+    - 250
+    - 300
     experience: []

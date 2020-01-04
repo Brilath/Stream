@@ -29,6 +29,30 @@ MonoBehaviour:
   _currentLevel: 0
   _characterClass: 5
   _progression: {fileID: 11400000, guid: fc8fd012dc685374e989c9b225a00c33, type: 2}
+  _health: {fileID: 0}
+  _grantExperienceLayer:
+    serializedVersion: 2
+    m_Bits: 1280
+--- !u!114 &8210451219968014671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196086332266098821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bbf75712da08c4c9076254b1388788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftHand: {fileID: 7619903374504908741}
+  _rightHand: {fileID: 7619903374505010571}
+  _bothHand: {fileID: 7619903374505010571}
+  _attackPoint: {fileID: 0}
+  _currentWeapon: {fileID: 11400000, guid: c1d1ceffe9a6dae45a488610ce74dfef, type: 2}
+  _spawnedWeapon: {fileID: 0}
+  _animator: {fileID: 0}
+  _nextAttack: 0
 --- !u!1001 &8461501924226345961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,6 +124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538484670328853250, guid: 211dd99df3d5dba479fdaef86ee60c39,
+        type: 3}
+      propertyPath: _attackLayer.m_Bits
+      value: 1280
       objectReference: {fileID: 0}
     - target: {fileID: 2076755999442023552, guid: 211dd99df3d5dba479fdaef86ee60c39,
         type: 3}
@@ -836,6 +865,18 @@ PrefabInstance:
 --- !u!1 &9196086332266098821 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 788768616244845420, guid: 211dd99df3d5dba479fdaef86ee60c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 8461501924226345961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7619903374504908741 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2076755999441681452, guid: 211dd99df3d5dba479fdaef86ee60c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 8461501924226345961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7619903374505010571 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2076755999441571426, guid: 211dd99df3d5dba479fdaef86ee60c39,
     type: 3}
   m_PrefabInstance: {fileID: 8461501924226345961}
   m_PrefabAsset: {fileID: 0}

@@ -23,4 +23,4 @@ MonoBehaviour:
   _jumpHeight: 3
   _canMove: 1
   _moveDirection: {x: 0, y: 0, z: 0}
-  _verticalDirection: 0
+  _verticalDirection: -500

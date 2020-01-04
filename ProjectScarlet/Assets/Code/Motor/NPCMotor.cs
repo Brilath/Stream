@@ -10,6 +10,7 @@ namespace ProjectScarlet
     {
         [SerializeField] private float _maxSpeed = 3.25f;
         [SerializeField] private float _turnSpeed = 1000f;
+        [SerializeField] private bool _canMove;
 
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private Transform _transform;
@@ -17,12 +18,15 @@ namespace ProjectScarlet
 
         [SerializeField] private string FORWARD_SPEED = "forwardSpeed";
 
+        public bool CanMove { get { return _canMove; } set { _canMove = value; } }
 
         private void Awake() 
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _transform = GetComponent<Transform>();
             _animator = GetComponentInChildren<Animator>();
+
+            CanMove = true;
         }
 
         private void Update() 
@@ -35,14 +39,17 @@ namespace ProjectScarlet
 
         public void MoveTo(Vector3 destination)
         {
-            //Debug.Log($"Dest: {destination}");
-            _navMeshAgent.destination = destination;
-            _navMeshAgent.speed = _maxSpeed;
-            _navMeshAgent.isStopped = false;
+            if (CanMove)
+            {
+                _navMeshAgent.destination = destination;
+                _navMeshAgent.speed = _maxSpeed;
+                _navMeshAgent.isStopped = false;
+            }
         }
 
         public void RotateTowards(Vector3 target)
         {
+            Vector3 newTarget = new Vector3(90, target.y, 90);
             _transform.rotation = Quaternion.Slerp(_transform.rotation, Quaternion.LookRotation(target), _turnSpeed * Time.deltaTime);
         }
 

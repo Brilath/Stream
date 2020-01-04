@@ -38,7 +38,7 @@ namespace ProjectScarlet
                 if (_fighter.CanAttack())
                 {
                     _animator.SetTrigger("attack");
-                    transform.rotation *= Quaternion.Euler(0, 90, 0);
+                    //transform.rotation *= Quaternion.Euler(0, 90, 0);
                     StartCoroutine(AttackDelay(currentWeapon.DelayTime, currentWeapon));
                 }
             }
@@ -67,11 +67,20 @@ namespace ProjectScarlet
 
             weapon.Projectile_.Target = _currentTarget;
             weapon.Attack(attackPoint);
-            transform.rotation *= Quaternion.Euler(0, -90, 0);
+            //transform.rotation *= Quaternion.Euler(0, -90, 0);
         }
 
         private void SetTarget()
         {
+            if (_currentTarget != null)
+            {
+                float dis = Vector3.Distance(_transform.position, _currentTarget.position);
+                if (dis > _attackRange)
+                {
+                    _currentTarget = _targets[0];
+                }
+            }
+
             if (_currentTarget != null && _targets.Count > 0)
             {
                 _newTarget = _currentTarget.position;
@@ -98,6 +107,8 @@ namespace ProjectScarlet
             {
                 _targets.Add(enemy.transform);
             }
+
+            //return _targets[0].position;
         }
     }
 }

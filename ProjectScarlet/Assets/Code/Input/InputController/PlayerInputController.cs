@@ -71,7 +71,6 @@ namespace ProjectScarlet
 
         private IEnumerator AttackDelay(float seconds, Weapon weapon)
         {
-            Debug.Log("Before Attack delay");
             motor.CanMove = false;
             motor.Stop();
 
@@ -88,10 +87,8 @@ namespace ProjectScarlet
             
             yield return new WaitForSeconds(seconds);
 
-            Debug.Log("Attack delay over");
             weapon.Attack(attackPoint);
 
-            transform.rotation *= Quaternion.Euler(0, -weapon.TransformRotationOffset, 0);
             motor.CanMove = true;
         }
 

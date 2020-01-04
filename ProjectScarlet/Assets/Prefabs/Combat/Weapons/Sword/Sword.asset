@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackRange: 2
   _attackSpeed: 1
-  _delayTime: 0
+  _delayTime: 0.5
   _transformRotation: 0
   _weaponName: Short Sword
   _weaponHand: 0
@@ -26,4 +26,4 @@ MonoBehaviour:
   _attackLayer:
     serializedVersion: 2
     m_Bits: 1536
-  _weaponDamage: 15
+  _weaponDamage: 150
