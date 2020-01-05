@@ -22,11 +22,8 @@ namespace ProjectScarlet
         private void OnTriggerEnter(Collider other)
         {
 
-            Debug.Log("Projectile has hit a target");
             Health targetHealth = other.GetComponent<Health>();
             int layer = other.gameObject.layer;
-
-            Debug.Log("Target layer: {layer}");
 
             if (targetHealth != null &&
                 CanAttack(layer))

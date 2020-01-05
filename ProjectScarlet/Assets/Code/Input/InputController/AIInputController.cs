@@ -125,8 +125,12 @@ namespace ProjectScarlet
 
         private void RefreshTarget()
         {
-            Collider[] enemies = Physics.OverlapSphere(_transform.position, 
-                    _fighter.CurrentWeapon.AttackRange, _attackLayer);
+            float targetRange = _fighter.CurrentWeapon.AttackRange;
+            if (_chaseRange > _fighter.CurrentWeapon.AttackRange)
+                targetRange = _chaseRange;
+
+            Collider[] enemies = Physics.OverlapSphere(_transform.position,
+                    targetRange, _attackLayer);
 
             if (enemies.Length > 0)
                 _target = enemies[0].transform;

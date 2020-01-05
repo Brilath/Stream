@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7445104729489069628
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7274175922588212618, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: _currentWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: e232354b1959a6f4b863b949c7104a71,
+        type: 2}
+    - target: {fileID: 5282296998333048496, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: _startingLevel
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7900288534349311733, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_Name
+      value: NPC_Jungle_Skeleton_Melee_Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.95093244
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.3093987
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 143.95401
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914158309936813532, guid: cd4aebf7a4a65be41865286797f78859,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd4aebf7a4a65be41865286797f78859, type: 3}

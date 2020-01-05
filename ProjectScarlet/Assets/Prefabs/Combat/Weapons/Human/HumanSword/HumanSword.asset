@@ -26,4 +26,4 @@ MonoBehaviour:
   _attackLayer:
     serializedVersion: 2
     m_Bits: 1280
-  _weaponDamage: 50
+  _weaponDamage: 25

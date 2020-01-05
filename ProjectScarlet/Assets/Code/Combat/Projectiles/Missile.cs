@@ -41,7 +41,9 @@ namespace ProjectScarlet
             _transform.position = Vector3.MoveTowards(_transform.position, middleOfTarget, _projectileSpeed * Time.deltaTime);
 
             //To Do
-            _transform.rotation = Quaternion.Slerp(_transform.rotation, Quaternion.LookRotation(Target.position), _projectileSpeed);
+            //_transform.rotation = Quaternion.Slerp(_transform.rotation, Quaternion.LookRotation(Target.position), _projectileSpeed);
+
+            _transform.LookAt(Target);
         }
     }
 }

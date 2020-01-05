@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7297ba293ecb61b4492d0bbdfb579f85, type: 3}
+  m_Name: Jungle Boss Sword
+  m_EditorClassIdentifier: 
+  _attackRange: 5
+  _attackSpeed: 1.5
+  _delayTime: 0.5
+  _transformRotation: 0
+  _weaponName: Boss Jungle Sword
+  _weaponHand: 0
+  _weaponType: 0
+  _weaponPrefab: {fileID: 2309216631740633821, guid: bd4abe8ea12e2dc4490d6cfa40fc0f4c,
+    type: 3}
+  _animatorController: {fileID: 22100000, guid: d78383ef8e1bafc4683d9d264f6920d4,
+    type: 2}
+  _attackLayer:
+    serializedVersion: 2
+    m_Bits: 768
+  _weaponDamage: 40

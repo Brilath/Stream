@@ -12,35 +12,58 @@ namespace ProjectScarlet
         [SerializeField] private float _spawnCountdown;
         [SerializeField] private AttackPath _attackPath;
         [SerializeField] private bool _spawnOnce = false;
+        [SerializeField] private bool _spawnUnitsOnceDead = false;
         [SerializeField] private bool _canSpawn = true;
+        [SerializeField] private List<GameObject> _spawnedUnits = new List<GameObject>();
 
         private void Awake() 
         {
-            //_spawnCountdown = _spawnCooldown;
             _attackPath = GetComponentInChildren<AttackPath>();
-        }
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }    
+        } 
 
         // Update is called once per frame
         void Update()
         {
             if (!_canSpawn) return;
 
-            _spawnCountdown -= Time.deltaTime;
+            if (_spawnUnitsOnceDead && _spawnedUnits.Count == 0)
+            {
+                _spawnCountdown -= Time.deltaTime;
+                _canSpawn = true;
+            }
+            else if (!_spawnUnitsOnceDead)
+            {
+                _spawnCountdown -= Time.deltaTime;
+            }
 
-            if(_spawnCountdown <= 0)
+            RefreshUnitList();
+
+            if (_spawnCountdown <= 0 && !_spawnUnitsOnceDead)
             {
                 StartCoroutine(Spawn());
                 _spawnCountdown = _spawnCooldown;
 
                 if (_spawnOnce)
                     _canSpawn = false;
-            }            
+            }
+            else if (_spawnedUnits.Count == 0 &&
+                        _spawnUnitsOnceDead &&
+                        _spawnCountdown <= 0)
+            {
+                StartCoroutine(Spawn());
+                _spawnCountdown = _spawnCooldown;
+            }
+
+        }
+
+        public void RefreshUnitList()
+        {
+            for(int i = _spawnedUnits.Count - 1; i >= 0; i--)
+            {
+                Debug.Log($"{i}");
+                if (_spawnedUnits[i] == null)
+                    _spawnedUnits.RemoveAt(i);                    
+            }
         }
 
         private IEnumerator Spawn()
@@ -49,6 +72,7 @@ namespace ProjectScarlet
             {            
                 var newNPC = Instantiate(npc, transform.position, transform.rotation);
                 newNPC.GetComponent<AIInputController>().SetAttackPath(_attackPath);
+                _spawnedUnits.Add(newNPC);
                 yield return StartCoroutine(Wait(1f));
             }
         }

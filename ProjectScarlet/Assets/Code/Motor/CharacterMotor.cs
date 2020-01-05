@@ -29,7 +29,7 @@ namespace ProjectScarlet
 
         void Start()
         {
-            
+
         }
 
         private void Update()
@@ -63,13 +63,13 @@ namespace ProjectScarlet
                 velocity.y = Mathf.MoveTowards(velocity.y, _settings.VerticalDirection, ChangeMoveSpeed());
                 velocity.z = Mathf.MoveTowards(velocity.z, _settings.MoveDirection.z, ChangeMoveSpeed());
 
-                //Debug.Log($"Velocity * Speed: {velocity * _settings.CurrentSpeed}");
                 _rigidbody.velocity = velocity;
             }
 
             if (_settings.MoveDirection.magnitude > 0.1)
             {
-                _transform.rotation = Quaternion.Slerp(_transform.rotation, Quaternion.LookRotation(_settings.MoveDirection), rotationChangeSpeed);
+                _transform.rotation = Quaternion.Slerp(_transform.rotation, 
+                    Quaternion.LookRotation(_settings.MoveDirection), rotationChangeSpeed);
             }
 
             CheckVertical();
