@@ -12,14 +12,41 @@ namespace ProjectScarlet
         [SerializeField] private GameObject _player;
         [SerializeField] private Health _health;
         [SerializeField] private Image _healthOrb;
+        [SerializeField] private Experience _experience;
+        [SerializeField] private Image _experienceBar;
+        [SerializeField] private Text _levelText;
 
         private void Awake()
         {
-            _player = GameObject.FindGameObjectWithTag("Player");
-            _health = _player.GetComponent<Health>();
 
-            _health.OnDamage += HandleDamage;
-            _health.OnHeal += HandleHeal;
+        }
+        
+        void Update()
+        {
+
+            if(_player == null)
+            {
+                _player = GameObject.FindGameObjectWithTag("Player");
+                _health = _player.GetComponent<Health>();
+                _experience = _player.GetComponent<Experience>();                
+
+                _health.OnDamage += HandleDamage;
+                _health.OnHeal += HandleHeal;
+
+                _experience.IncreaseExperience += HandleExperienceGain;
+                _experience.OnLevelUp += HandleLevelUp;
+            }
+        }
+
+        private void HandleLevelUp()
+        {
+            // update _levelText
+            _levelText.text = _experience.GetCurrentLevel().ToString();
+        }
+
+        private void HandleExperienceGain()
+        {
+            _experienceBar.fillAmount = _experience.GetPercentage();
         }
 
         private void HandleHeal()

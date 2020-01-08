@@ -19,7 +19,9 @@ namespace ProjectScarlet
 
         private void SetTargetCollider()
         {
-            _targetCollider = Target.GetComponent<Collider>();
+            if (Target == null) Destroy(this.gameObject);
+
+            _targetCollider = Target.gameObject.GetComponent<Collider>();
         }
 
         public override void Launch(Transform launchPostition)
@@ -33,7 +35,7 @@ namespace ProjectScarlet
 
         private void Update()
         {
-            if (Target == null) Destroy(gameObject);
+            if (Target == null) Destroy(this.gameObject);
             
             if (_targetCollider == null) SetTargetCollider();
             

@@ -49,6 +49,8 @@ namespace ProjectScarlet
         {
             CurrentHealth = GetBaseHealth();
             OnHealthAdded(this);
+            //OnHealthPctChange(CurrentHealth / GetBaseHealth());
+            //OnHeal();
         }
 
         public void ModifyHealth(float amount)
@@ -65,6 +67,8 @@ namespace ProjectScarlet
             {
                 OnHealthRemoved(this);
                 OnDeath();
+                //transform.position = new Vector3(0,0,0);
+                //this.gameObject.SetActive(false);
                 Destroy(this.gameObject);
             }
             if(amount > 0)

@@ -2666,6 +2666,7 @@ GameObject:
   - component: {fileID: 1286860771}
   - component: {fileID: 1286860772}
   - component: {fileID: 1286860773}
+  - component: {fileID: 1286860775}
   m_Layer: 8
   m_Name: OrcPlayer
   m_TagString: Player
@@ -2731,6 +2732,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHealth: 1
+  _maxHealth: 0
+  _experience: {fileID: 0}
 --- !u!114 &7365003833589783142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2745,6 +2748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxExperience: 0
   _currentExperience: 0
+  _baseStats: {fileID: 0}
 --- !u!114 &1286860767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2809,9 +2813,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startingLevel: 1
   _currentLevel: 0
-  _experience: {fileID: 0}
   _characterClass: 0
   _progression: {fileID: 11400000, guid: d0833d8188e8bf543833e59b6ca658b5, type: 2}
+  _health: {fileID: 0}
+  _grantExperienceLayer:
+    serializedVersion: 2
+    m_Bits: 1536
 --- !u!114 &1286860773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2832,3 +2839,21 @@ MonoBehaviour:
   _spawnedWeapon: {fileID: 0}
   _animator: {fileID: 0}
   _nextAttack: 0
+--- !u!114 &1286860775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5786872404005003082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47c26b21f11b3c4da2586eacbec38e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObject: {fileID: 0}
+  _transform: {fileID: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
+  _startRotation: {x: 0, y: 0, z: 0, w: 0}
+  _respawnCooldown: 3
+  _health: {fileID: 0}

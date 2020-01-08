@@ -15,7 +15,7 @@ MonoBehaviour:
   _progressionClasses:
     characterClass: 0
     health:
-    - 10000
+    - 100
     - 11000
     - 12000
     - 130

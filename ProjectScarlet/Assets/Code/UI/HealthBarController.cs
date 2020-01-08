@@ -24,6 +24,9 @@ namespace ProjectScarlet
 
         private void Update()
         {
+            if(player == null)
+                player = GameObject.FindGameObjectWithTag("Player");
+                
             foreach(KeyValuePair<Health, HealthBar> healthBar in healthBars)
             {
                 healthBar.Value.gameObject.SetActive(InViewDistance(healthBar.Key));

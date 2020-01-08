@@ -15,7 +15,8 @@ namespace ProjectScarlet
         [SerializeField] private Health _health;
         [SerializeField] private LayerMask _grantExperienceLayer;
 
-        public int StartingLevel { get { return _startingLevel; } set { _startingLevel = value; } }
+        public int StartingLevel { get { return _startingLevel; } }
+        public int CurrentLevel { get {return _currentLevel; } }
 
         private void Awake()
         {

@@ -72,12 +72,18 @@ namespace ProjectScarlet
 
         private void SetTarget()
         {
+            if(_targets.Count == 0)
+            {
+                _currentTarget = null;
+                return;
+            }
+
             if (_currentTarget != null)
             {
                 float dis = Vector3.Distance(_transform.position, _currentTarget.position);
                 if (dis > _attackRange)
                 {
-                    _currentTarget = _targets[0];
+                    _currentTarget = _targets[0];              
                 }
             }
 

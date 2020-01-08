@@ -22,9 +22,9 @@ namespace ProjectScarlet
     private Camera mainCamera;
 
     void Start() {
-        
-        //playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
-        playerTarget = target.transform;
+
+        playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        setTarget(playerTarget);
             
 
         sphericalVector.Length = camera_Length;
@@ -39,11 +39,16 @@ namespace ProjectScarlet
         MouseLock.MouseLocked = true;
         }
 
-        new void Update() {
+        new void Update() 
+        {
+            if (playerTarget == null)
+            {
+                playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+                setTarget(playerTarget);
+            }
 
             HandleCamera();
-            HandleMouseLocking();
-
+            HandleMouseLocking();           
         }
 
         public void setTarget(Transform target)

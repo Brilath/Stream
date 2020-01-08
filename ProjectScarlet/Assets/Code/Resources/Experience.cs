@@ -9,24 +9,27 @@ namespace ProjectScarlet
     {
         [SerializeField] private float _maxExperience;
         [SerializeField] private float _currentExperience;
+        [SerializeField] private CharacterBaseStats _baseStats;
 
         public float CurrentExperience { get { return _currentExperience; } set { _currentExperience = value; } }
 
         public event Action OnLevelUp = delegate { };
+        public event Action IncreaseExperience = delegate{};
         
         void Start()
         {
-            SetExperience();
+            SetupExperience();
         }
 
         private void OnEnable()
         {
-            SetExperience();
+            SetupExperience();
         }
 
-        private void SetExperience()
+        private void SetupExperience()
         {
-            _maxExperience = GetBaseExperience();
+            _baseStats = GetComponent<CharacterBaseStats>();
+            _maxExperience = GetBaseExperience();            
         }
 
         // Update is called once per frame
@@ -43,19 +46,31 @@ namespace ProjectScarlet
             {
                 LevelUp();
             }
+
+            IncreaseExperience();
         }
 
         private void LevelUp()
         {
             _currentExperience -= _maxExperience;
-            GetComponent<CharacterBaseStats>().IncreaseLevel();
-            SetExperience();
+            _baseStats.IncreaseLevel();
+            _maxExperience = GetBaseExperience();
             OnLevelUp();
         }
 
         private float GetBaseExperience()
         {
-            return GetComponent<CharacterBaseStats>().GetExperience();
+            return _baseStats.GetExperience();
+        }
+
+        public int GetCurrentLevel()
+        {
+            return _baseStats.CurrentLevel;
+        }
+
+        public float GetPercentage()
+        {
+            return CurrentExperience / GetBaseExperience();
         }
     }
 }
