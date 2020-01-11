@@ -22,9 +22,14 @@ namespace ProjectScarlet
         private bool _isAttacking;
         private bool _isNavigating;
 
-        private void Awake() 
+        private void Awake()
         {
-            _motor = GetComponent<NPCMotor>();    
+            SetupInput();
+        }
+
+        private void SetupInput()
+        {
+            _motor = GetComponent<NPCMotor>();
             _transform = GetComponent<Transform>();
             if (_path == null)
             {
@@ -36,6 +41,12 @@ namespace ProjectScarlet
 
             _isNavigating = true;
             _currentWaypoint = 0;
+        }
+
+        private void OnEnable() 
+        {
+            _currentWaypoint = 0;
+            _target = null;
         }
 
         // Start is called before the first frame update
@@ -57,8 +68,7 @@ namespace ProjectScarlet
 
         void FixedUpdate()
         {
-            
-                RefreshTarget();
+            RefreshTarget();
         }
 
         private void AttackBehaviour()

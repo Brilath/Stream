@@ -32,6 +32,11 @@ namespace ProjectScarlet
 
         }
 
+        private void OnEnable() 
+        {
+            CanMove = true;
+        }
+
         private void Update()
         {
             

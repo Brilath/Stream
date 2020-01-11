@@ -40,7 +40,7 @@ namespace ProjectScarlet
             {
                 if(Input.GetKeyDown(keybind.Key))
                 {
-                    keybind.Command.Execute(motor);
+                    keybind.Command.Execute(this.gameObject);
                     break;
                 }
             }
@@ -56,16 +56,14 @@ namespace ProjectScarlet
                     {
                         var oldRotation = transform.rotation;
 
-                        Debug.Log($"Y Rotation: {transform.rotation.y}");
+//                        Debug.Log($"Y Rotation: {transform.rotation.y}");
                         anim.SetTrigger("attack");
-                        //transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, 
-                        //    transform.rotation.y + 90f, transform.rotation.z));
+
                         transform.rotation *=  Quaternion.Euler(0, currentWeapon.TransformRotationOffset, 0);
                         StartCoroutine(AttackDelay(currentWeapon.DelayTime, currentWeapon));                        
                     }
                 }
             }
-
             settings.MoveDirection = SetMoveDirection();
         }
 
@@ -92,7 +90,7 @@ namespace ProjectScarlet
             motor.CanMove = true;
         }
 
-        private Vector3 SetMoveDirection()
+        public Vector3 SetMoveDirection()
         {
             Vector3 direction;
             Vector3 forward = Quaternion.AngleAxis(-90f, Vector3.up) * playerCamera.transform.right;

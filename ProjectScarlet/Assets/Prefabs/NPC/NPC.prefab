@@ -131,6 +131,7 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 0}
   _transform: {fileID: 0}
   _animator: {fileID: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   FORWARD_SPEED: forwardSpeed
 --- !u!1 &2076755999441814448
 GameObject:

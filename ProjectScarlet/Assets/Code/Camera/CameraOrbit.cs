@@ -21,11 +21,14 @@ namespace ProjectScarlet
     private Transform playerTarget;
     private Camera mainCamera;
 
-    void Start() {
+    void Start() 
+    {
 
         playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
-        setTarget(playerTarget);
-            
+        if (playerTarget != null)
+        {
+            setTarget(playerTarget);
+        }            
 
         sphericalVector.Length = camera_Length;
         sphericalVector.Azimuth = angle_Offset.x;

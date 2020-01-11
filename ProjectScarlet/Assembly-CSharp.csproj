@@ -44,7 +44,13 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-  <ItemGroup>     <Compile Include="Assets\Code\Animation\AnimationController.cs" />
+  <ItemGroup>     <Compile Include="Assets\Code\Ability\Ability.cs" />
+     <Compile Include="Assets\Code\Ability\AbilityType.cs" />
+     <Compile Include="Assets\Code\Ability\CharacterAbilityProcessor.cs" />
+     <Compile Include="Assets\Code\Ability\CombatAbility.cs" />
+     <Compile Include="Assets\Code\Ability\DefensiveAbility.cs" />
+     <Compile Include="Assets\Code\Ability\MovementAbility.cs" />
+     <Compile Include="Assets\Code\Animation\AnimationController.cs" />
      <Compile Include="Assets\Code\Camera\CameraOrbit.cs" />
      <Compile Include="Assets\Code\Camera\CameraZoom.cs" />
      <Compile Include="Assets\Code\Camera\MouseLock.cs" />
@@ -86,6 +92,7 @@
      <Compile Include="Assets\Code\Spawner\OneTimeSpawner.cs" />
      <Compile Include="Assets\Code\Spawner\Respawn.cs" />
      <Compile Include="Assets\Code\Spawner\Spawner.cs" />
+     <Compile Include="Assets\Code\Test.cs" />
      <Compile Include="Assets\Code\UI\HealthBar.cs" />
      <Compile Include="Assets\Code\UI\HealthBarController.cs" />
      <Compile Include="Assets\Code\UI\UIController.cs" />
@@ -117,14 +124,14 @@
  <Reference Include="Unity.Rider.Editor">
  <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>G:/GitHub/Stream/ProjectScarlet/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>G:/Program Files/Unity/2019.2.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

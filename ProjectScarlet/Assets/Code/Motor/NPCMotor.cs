@@ -16,6 +16,8 @@ namespace ProjectScarlet
         [SerializeField] private Transform _transform;
         [SerializeField] private Animator _animator;
 
+        [SerializeField] public Vector3 _startPosition;
+
         [SerializeField] private string FORWARD_SPEED = "forwardSpeed";
 
         public bool CanMove { get { return _canMove; } set { _canMove = value; } }
@@ -25,8 +27,14 @@ namespace ProjectScarlet
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _transform = GetComponent<Transform>();
             _animator = GetComponentInChildren<Animator>();
+            _startPosition = transform.position;
 
             CanMove = true;
+        }
+
+        private void OnEnable() 
+        {
+            CanMove = true;    
         }
 
         private void Update() 

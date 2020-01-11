@@ -10,6 +10,8 @@ namespace ProjectScarlet
 
         void Update()
         {
+            RefreshUnitList();
+            
             if(_spawnCountdown <= 0)
             {
                 StartCoroutine(Spawn());

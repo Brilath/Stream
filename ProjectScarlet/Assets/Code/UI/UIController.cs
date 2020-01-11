@@ -27,14 +27,17 @@ namespace ProjectScarlet
             if(_player == null)
             {
                 _player = GameObject.FindGameObjectWithTag("Player");
-                _health = _player.GetComponent<Health>();
-                _experience = _player.GetComponent<Experience>();                
+                if(_player != null)
+                {
+                    _health = _player.GetComponent<Health>();
+                    _experience = _player.GetComponent<Experience>();                
 
-                _health.OnDamage += HandleDamage;
-                _health.OnHeal += HandleHeal;
+                    _health.OnDamage += HandleDamage;
+                    _health.OnHeal += HandleHeal;
 
-                _experience.IncreaseExperience += HandleExperienceGain;
-                _experience.OnLevelUp += HandleLevelUp;
+                    _experience.IncreaseExperience += HandleExperienceGain;
+                    _experience.OnLevelUp += HandleLevelUp;
+                }
             }
         }
 

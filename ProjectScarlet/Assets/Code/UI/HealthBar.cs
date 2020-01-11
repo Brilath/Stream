@@ -13,11 +13,18 @@ namespace ProjectScarlet
         [SerializeField] private Camera _camera;
         [SerializeField] private Health _health;
         [SerializeField] private Transform _transform;
+        [SerializeField] private IEnumerator _coroutine;
 
         private void Awake()
         {
             _camera = Camera.main;
             _transform = GetComponent<Transform>();
+            _coroutine = ChangeToPct(1);
+        }
+        private void OnEnable() 
+        {
+            if(_health != null)
+                _health.OnHealthPctChange += HandleHealthChange;   
         }
 
         public void SetHealth(Health health)
@@ -27,8 +34,11 @@ namespace ProjectScarlet
         }
 
         private void HandleHealthChange(float pct)
-        {           
-            StartCoroutine(ChangeToPct(pct));
+        {            
+            _coroutine = ChangeToPct(pct);
+
+            if (gameObject.activeSelf)
+                StartCoroutine(_coroutine);
         }
 
         private IEnumerator ChangeToPct(float pct)
@@ -50,6 +60,13 @@ namespace ProjectScarlet
         {
             _transform.position = _camera.WorldToScreenPoint(_health.transform.position +
                 Vector3.up * _positionOffset);
+        }
+
+        private void OnDisable()
+        {
+            _health.OnHealthPctChange -= HandleHealthChange;
+            if(_coroutine != null)
+                StopCoroutine(_coroutine);
         }
     }
 }

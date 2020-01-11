@@ -38,6 +38,12 @@ namespace ProjectScarlet
         private void OnEnable()
         {
             SetupHealth();
+            _experience = GetComponent<Experience>();
+
+            if (_experience != null)
+            {
+                _experience.OnLevelUp += HandleLevelUp;
+            }
         }        
 
         public void Update()
@@ -67,9 +73,9 @@ namespace ProjectScarlet
             {
                 OnHealthRemoved(this);
                 OnDeath();
-                //transform.position = new Vector3(0,0,0);
-                //this.gameObject.SetActive(false);
-                Destroy(this.gameObject);
+                transform.position = new Vector3(1, 2, 2);
+                this.gameObject.SetActive(false);
+                //Destroy(this.gameObject);
             }
             if(amount > 0)
             {

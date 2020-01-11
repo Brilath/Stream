@@ -12,6 +12,11 @@ namespace ProjectScarlet
             StartCoroutine(StartSpawn());
         }
 
+        void Update() 
+        {
+            RefreshUnitList();    
+        }
+
         private IEnumerator StartSpawn()
         {
             yield return new WaitForSeconds(_spawnCooldown);

@@ -24,13 +24,13 @@ namespace ProjectScarlet
             }
         }
 
-        protected void RefreshUnitList()
-        {
-            for (int i = _spawnedUnits.Count - 1; i >= 0; i--)
-            {
-                if (_spawnedUnits[i] == null)
-                    _spawnedUnits.RemoveAt(i);
-            }
-        }    
+        // protected void RefreshUnitList()
+        // {
+        //     for (int i = _spawnedUnits.Count - 1; i >= 0; i--)
+        //     {
+        //         if (!_spawnedUnits[i].activeSelf)
+        //             _spawnedUnits.RemoveAt(i);
+        //     }
+        // }    
     }
 }

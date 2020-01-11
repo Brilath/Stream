@@ -21,8 +21,11 @@ namespace ProjectScarlet
 
         public override void Attack(Transform attackPoint)
         {
-            var projectile = Instantiate(_projectile, attackPoint.position, attackPoint.rotation);
-            projectile.Launch(attackPoint);
+            if(attackPoint != null)
+            {
+                var projectile = Instantiate(_projectile, attackPoint.position, attackPoint.rotation);
+                projectile.Launch(attackPoint);
+            }
         }
     }
 }

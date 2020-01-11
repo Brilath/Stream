@@ -17,6 +17,7 @@ namespace ProjectScarlet
 
         public int StartingLevel { get { return _startingLevel; } }
         public int CurrentLevel { get {return _currentLevel; } }
+        public CharacterClass CharClass { get { return _characterClass; } }
 
         private void Awake()
         {

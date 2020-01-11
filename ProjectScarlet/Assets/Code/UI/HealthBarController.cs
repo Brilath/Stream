@@ -35,7 +35,9 @@ namespace ProjectScarlet
 
         private bool InViewDistance(Health health)
         {
-            bool isVisible = false;
+            if (player == null) return false;
+            
+            bool isVisible = false;                        
 
             float distanceFromPlayer = Vector3.Distance(player.transform.position,
                     health.transform.position);
