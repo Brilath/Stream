@@ -93,6 +93,7 @@
      <Compile Include="Assets\Code\Spawner\Respawn.cs" />
      <Compile Include="Assets\Code\Spawner\Spawner.cs" />
      <Compile Include="Assets\Code\Test.cs" />
+     <Compile Include="Assets\Code\UI\AbilityIcon.cs" />
      <Compile Include="Assets\Code\UI\HealthBar.cs" />
      <Compile Include="Assets\Code\UI\HealthBarController.cs" />
      <Compile Include="Assets\Code\UI\UIController.cs" />

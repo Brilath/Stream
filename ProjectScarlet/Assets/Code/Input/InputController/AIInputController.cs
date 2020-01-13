@@ -148,6 +148,19 @@ namespace ProjectScarlet
                 _target = null;             
         }
 
+        private void OnTriggerEnter(Collider other) 
+        {
+            if (other.gameObject.tag == "Zombie")
+            {
+                _target = other.gameObject.transform;
+            }
+        }
+
+        private float Sum(float num1, float num2)
+        {
+            return num1 + num2;
+        }
+
         private bool  AtWaypoint()
         {
             bool _atWaypoint = false;

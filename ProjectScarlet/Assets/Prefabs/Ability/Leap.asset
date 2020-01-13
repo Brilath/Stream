@@ -15,5 +15,7 @@ MonoBehaviour:
   _name: Leap
   _cooldown: 10
   _type: 0
+  _countdown: -0.016800052
+  _icon: {fileID: 21300000, guid: 96b2a888483ba2047aa82210af95d3ca, type: 3}
   movementPower: 7
   movementDirection: {x: 1, y: 3, z: 1}

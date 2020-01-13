@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ namespace ProjectScarlet
     {
         [SerializeField] private List<Ability> _abilities = new List<Ability>();
         [SerializeField] private Dictionary<int, bool> _abilityAvailability = new Dictionary<int, bool>();
+
+        public event Action<Ability> OnAbilityUsed = delegate { };
         
         private void Start()
         {
@@ -28,10 +31,7 @@ namespace ProjectScarlet
 
         private void Update() 
         {
-            foreach(KeyValuePair<int, bool> availability in _abilityAvailability)
-            {
-                Debug.Log($"Index {availability.Key} Flag {availability.Value}");
-            }    
+  
         }        
 
         public Ability GetAbility(int num)
@@ -41,9 +41,15 @@ namespace ProjectScarlet
             if(_abilityAvailability[num])
             {               
                 charAbility = _abilities[num];
+                OnAbilityUsed(charAbility);
                 UsedAbility(_abilities[num], num);                
             }
             return charAbility;                    
+        }
+
+        public List<Ability> GetAbilities()
+        {
+            return _abilities;
         }
 
         private void UsedAbility(Ability ability, int abilityNumber)
@@ -55,7 +61,13 @@ namespace ProjectScarlet
 
         private IEnumerator AbilityOnCooldown(Ability ability, int abilityNumber)
         {
-            yield return new WaitForSeconds(ability.Cooldown);
+            ability.CountDown = ability.Cooldown;
+
+            while(ability.CountDown > 0)
+            {
+                ability.CountDown -= Time.deltaTime;
+                yield return null;
+            }            
 
             _abilityAvailability[abilityNumber] = true;
         }

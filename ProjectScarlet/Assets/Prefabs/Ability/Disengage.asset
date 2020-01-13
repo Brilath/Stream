@@ -15,5 +15,7 @@ MonoBehaviour:
   _name: Disenage
   _cooldown: 10
   _type: 0
-  movementPower: 8
-  movementDirection: {x: -1, y: 3, z: -1}
+  _countdown: -0.008525893
+  _icon: {fileID: 21300000, guid: dfb18059a8400df45b9dae5ee4f473e6, type: 3}
+  movementPower: 7
+  movementDirection: {x: -1, y: 4, z: -1}

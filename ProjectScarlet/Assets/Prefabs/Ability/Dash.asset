@@ -15,5 +15,7 @@ MonoBehaviour:
   _name: Dash
   _cooldown: 10
   _type: 0
+  _countdown: -0.008800279
+  _icon: {fileID: 21300000, guid: f8447285a182fbd4d910f496512f7b39, type: 3}
   movementPower: 7
   movementDirection: {x: 1, y: 1, z: 1}
