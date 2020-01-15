@@ -52,9 +52,7 @@ namespace ProjectScarlet
     {
         public void Execute(GameObject unit)
         {
-            Debug.Log("Execute Skill One Command");
             Ability ability1 = unit.GetComponent<CharacterAbilityProcessor>().GetAbility(0);
-            Debug.Log($"Ability Name {ability1.Name}");
 
             if(ability1 != null)
                 ability1.ProcessAbility(unit);
@@ -66,9 +64,7 @@ namespace ProjectScarlet
     {
         public void Execute(GameObject unit)
         {
-            Debug.Log("Execute Skill Two Command");
             Ability ability2 = unit.GetComponent<CharacterAbilityProcessor>().GetAbility(1);
-            Debug.Log($"Ability Name {ability2.Name}");
 
             if (ability2 != null)
                 ability2.ProcessAbility(unit);
@@ -79,9 +75,7 @@ namespace ProjectScarlet
     {
         public void Execute(GameObject unit)
         {
-            Debug.Log("Execute Skill Three Command");
             Ability ability3 = unit.GetComponent<CharacterAbilityProcessor>().GetAbility(2);
-            Debug.Log($"Ability Name {ability3.Name}");
 
             if (ability3 != null)
                 ability3.ProcessAbility(unit);
@@ -93,6 +87,10 @@ namespace ProjectScarlet
         public void Execute(GameObject unit)
         {
             Debug.Log("Execute Ultimate Command");
+            Ability ultimate = unit.GetComponent<CharacterAbilityProcessor>().GetAbility(3);
+            
+            if (ultimate != null)
+                ultimate.ProcessAbility(unit);
         }
     }
 }
