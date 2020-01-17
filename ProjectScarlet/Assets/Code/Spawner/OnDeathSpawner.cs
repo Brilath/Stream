@@ -22,15 +22,6 @@ namespace ProjectScarlet
                 StartCoroutine(Spawn());
                 _spawnCountdown = _spawnCooldown;
             }
-        }
-
-        // protected void RefreshUnitList()
-        // {
-        //     for (int i = _spawnedUnits.Count - 1; i >= 0; i--)
-        //     {
-        //         if (!_spawnedUnits[i].activeSelf)
-        //             _spawnedUnits.RemoveAt(i);
-        //     }
-        // }    
+        }  
     }
 }

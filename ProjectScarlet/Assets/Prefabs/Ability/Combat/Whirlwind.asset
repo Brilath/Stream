@@ -15,12 +15,8 @@ MonoBehaviour:
   _name: Whirlwind
   _cooldown: 15
   _type: 1
-  _countdown: -0.0064486247
+  _countdown: -0.009053379
   _icon: {fileID: 21300000, guid: a0c9b3988004b814ba8fdb24fa30240f, type: 3}
-  overrideController: {fileID: 22100000, guid: e5cce49e2ea72d84f803d6ed983326b9, type: 2}
-  _animation: {fileID: 0}
-  _animationClip: {fileID: -203655887218126122, guid: bb336bf391a15a7458ff58e3a2ea4556,
-    type: 3}
+  _clip: {fileID: -203655887218126122, guid: 16420aa61d4949c428b55bb9b8c92ad0, type: 3}
   range: 10
   damage: 75
-  castTime: 4

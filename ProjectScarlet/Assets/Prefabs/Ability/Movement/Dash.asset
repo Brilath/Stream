@@ -15,11 +15,8 @@ MonoBehaviour:
   _name: Dash
   _cooldown: 10
   _type: 0
-  _countdown: -0.025665851
+  _countdown: -0.002487097
   _icon: {fileID: 21300000, guid: acbd71afd67ffe041babb5881004aa75, type: 3}
-  overrideController: {fileID: 22100000, guid: d6876cfdd0baa2f46a07e5d37ba3c076, type: 2}
-  _animation: {fileID: 0}
-  _animationClip: {fileID: 0}
+  _clip: {fileID: -203655887218126122, guid: a0fea4d22745a474299aac6cabe55af4, type: 3}
   movementPower: 7
   movementDirection: {x: 1, y: 1, z: 1}
-  castTime: 20

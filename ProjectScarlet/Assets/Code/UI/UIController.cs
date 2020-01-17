@@ -15,6 +15,7 @@ namespace ProjectScarlet
         [SerializeField] private Experience _experience;
         [SerializeField] private Image _experienceBar;
         [SerializeField] private Text _levelText;
+        [SerializeField] private DeathScreen _deathScreen;
         // Abilities
         [SerializeField] private Transform _abilityUI;
         [SerializeField] private AbilityIcon _abilityUIPrefab;
@@ -51,7 +52,6 @@ namespace ProjectScarlet
 
         private void HandleLevelUp()
         {
-            // update _levelText
             _levelText.text = _experience.GetCurrentLevel().ToString();
         }
 
@@ -70,6 +70,13 @@ namespace ProjectScarlet
             _healthOrb.fillAmount = _health.GetPercentage();
         }
 
+        private void HandleDeath()
+        {
+            float respawnTime = _health.gameObject.GetComponent<Respawn>().RespawnCooldown;
+            _deathScreen.gameObject.SetActive(true);            
+            _deathScreen.CountDown(respawnTime);            
+        }
+
         private void Initialize()
         {
             if (_player == null)
@@ -85,12 +92,18 @@ namespace ProjectScarlet
 
                 _health.OnDamage += HandleDamage;
                 _health.OnHeal += HandleHeal;
+                _health.OnDeath += HandleDeath;
 
                 _experience.IncreaseExperience += HandleExperienceGain;
                 _experience.OnLevelUp += HandleLevelUp;
 
                 SetupAbiltyBar();
             }
+        }
+
+        public void ExitGame()
+        {
+            Application.Quit();
         }
     }
 }

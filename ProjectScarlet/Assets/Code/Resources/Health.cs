@@ -44,6 +44,10 @@ namespace ProjectScarlet
             {
                 _experience.OnLevelUp += HandleLevelUp;
             }
+        }
+        private void OnDisable() 
+        {
+            OnHealthRemoved(this);
         }        
 
         public void Update()
@@ -71,10 +75,14 @@ namespace ProjectScarlet
 
             if(CurrentHealth <= 0)
             {
-                OnHealthRemoved(this);
-                OnDeath();
-                transform.position = new Vector3(1, 2, 2);
-                this.gameObject.SetActive(false);
+                
+                OnDeath();                
+
+                if(transform.gameObject.tag != "Player")
+                {
+                    this.gameObject.SetActive(false);
+                    transform.position = new Vector3(1, 2, 2);
+                }
                 //Destroy(this.gameObject);
             }
             if(amount > 0)

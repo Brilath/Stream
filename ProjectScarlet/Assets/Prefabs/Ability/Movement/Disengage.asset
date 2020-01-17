@@ -15,11 +15,8 @@ MonoBehaviour:
   _name: Disenage
   _cooldown: 10
   _type: 0
-  _countdown: -0.011858327
+  _countdown: -0.011511046
   _icon: {fileID: 21300000, guid: 547db0c78bd22af4a8fa00f605545474, type: 3}
-  overrideController: {fileID: 22100000, guid: d6876cfdd0baa2f46a07e5d37ba3c076, type: 2}
-  _animation: {fileID: 0}
-  _animationClip: {fileID: 0}
+  _clip: {fileID: -203655887218126122, guid: 34ec2e88984139445bb97e35990b3250, type: 3}
   movementPower: 7
   movementDirection: {x: -1, y: 4, z: -1}
-  castTime: 20

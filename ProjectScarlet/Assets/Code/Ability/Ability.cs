@@ -13,15 +13,14 @@ namespace ProjectScarlet
         [SerializeField] protected AbilityType _type;
         [SerializeField] protected float _countdown;
         [SerializeField] protected Sprite _icon;
-        [SerializeField] protected AnimatorOverrideController overrideController;
-        [SerializeField] protected Animation _animation;
-        [SerializeField] protected AnimationClip _animationClip;       
+        [SerializeField] protected AnimationClip _clip;       
 
         public string Name { get { return _name; } protected set { _name = value; } }
         public int Cooldown { get { return _cooldown; } protected set { _cooldown  = value; } }
         public float CountDown { get { return _countdown; } set { _countdown = value; } }
         public AbilityType Type { get { return _type; } protected set { _type = value; } }
         public Sprite Icon { get { return _icon; } protected set { _icon = value; } }
+        public AnimationClip Clip { get { return _clip;} protected set { _clip = value; } }
 
         public abstract void ProcessAbility(GameObject unit);        
     }

@@ -15,11 +15,9 @@ MonoBehaviour:
   _name: Leap
   _cooldown: 10
   _type: 0
-  _countdown: -0.002625456
+  _countdown: 3.6191287
   _icon: {fileID: 21300000, guid: fa0547de6a16e84418d7e92f701a0824, type: 3}
-  overrideController: {fileID: 22100000, guid: d6876cfdd0baa2f46a07e5d37ba3c076, type: 2}
-  _animation: {fileID: 0}
-  _animationClip: {fileID: 0}
+  _clip: {fileID: -203655887218126122, guid: 1a9fbd008dc2ab842a9b05e4f789a1f1, type: 3}
   movementPower: 7
   movementDirection: {x: 1, y: 3, z: 1}
   castTime: 20

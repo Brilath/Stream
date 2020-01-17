@@ -97,10 +97,12 @@ namespace ProjectScarlet
         void HandleMouseLocking()
         {
             if(Input.GetKeyDown(KeyCode.Tab)){
-                if (MouseLock.MouseLocked){
+                if (MouseLock.MouseLocked)
+                {
                     MouseLock.MouseLocked = false;
                 }
-                else{
+                else
+                {
                     MouseLock.MouseLocked = true;
                 }
             }
