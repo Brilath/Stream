@@ -48,8 +48,12 @@
      <Compile Include="Assets\Code\Ability\AbilityType.cs" />
      <Compile Include="Assets\Code\Ability\CharacterAbilityProcessor.cs" />
      <Compile Include="Assets\Code\Ability\CombatAbility.cs" />
-     <Compile Include="Assets\Code\Ability\DefensiveAbility.cs" />
+     <Compile Include="Assets\Code\Ability\DamageModifierAbility.cs" />
+     <Compile Include="Assets\Code\Ability\DefensiveModifierAbility.cs" />
+     <Compile Include="Assets\Code\Ability\MeleeCombatAbility.cs" />
+     <Compile Include="Assets\Code\Ability\ModifierAbility.cs" />
      <Compile Include="Assets\Code\Ability\MovementAbility.cs" />
+     <Compile Include="Assets\Code\Ability\RangedCombatAbility.cs" />
      <Compile Include="Assets\Code\Animation\AnimationController.cs" />
      <Compile Include="Assets\Code\Camera\CameraOrbit.cs" />
      <Compile Include="Assets\Code\Camera\CameraZoom.cs" />

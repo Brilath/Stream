@@ -34,13 +34,11 @@ namespace ProjectScarlet
 
         public void Tick()
         {
-            //Debug.Log("Ticking");
-
             foreach(Keybind keybind in keybinding.Keybindings)
             {
                 if(Input.GetKeyDown(keybind.Key))
                 {
-                    keybind.Command.Execute(this.gameObject);
+                    keybind.Command.Execute(this.gameObject, keybind);
                     break;
                 }
             }
@@ -55,8 +53,7 @@ namespace ProjectScarlet
                     if (_fighter.CanAttack())
                     {
                         var oldRotation = transform.rotation;
-
-//                        Debug.Log($"Y Rotation: {transform.rotation.y}");
+                        
                         anim.SetTrigger("attack");
 
                         transform.rotation *=  Quaternion.Euler(0, currentWeapon.TransformRotationOffset, 0);

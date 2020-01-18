@@ -10,8 +10,15 @@ namespace ProjectScarlet
     {
         [SerializeField] private List<Ability> _abilities = new List<Ability>();
         [SerializeField] private Dictionary<int, bool> _abilityAvailability = new Dictionary<int, bool>();
+        [SerializeField] private bool _canCast = true;
+        [SerializeField] private float _abilityCooldown = 1.5f;
+        [SerializeField] private float _abilityCountDown;
 
         public event Action<Ability> OnAbilityUsed = delegate { };
+        public event Action<CharacterAbilityProcessor> OnGlobalCooldown = delegate { };
+
+        public float GlobalCooldown { get { return _abilityCooldown; } }
+        public float AbilityCountDown { get { return _abilityCountDown; } private set { _abilityCountDown = value; } }
         
         private void Start()
         {
@@ -38,11 +45,12 @@ namespace ProjectScarlet
         {
             Ability charAbility = null;
 
-            if(_abilityAvailability[num])
+            if(_abilityAvailability[num] && _canCast)
             {               
-                charAbility = _abilities[num];
+                charAbility = _abilities[num];                                           
+                UsedAbility(_abilities[num], num);
                 OnAbilityUsed(charAbility);
-                UsedAbility(_abilities[num], num);                
+                OnGlobalCooldown(this);
             }
             return charAbility;                    
         }
@@ -57,6 +65,7 @@ namespace ProjectScarlet
             _abilityAvailability[abilityNumber] = false;
 
             StartCoroutine(AbilityOnCooldown(ability, abilityNumber));
+            StartCoroutine(StartAbilityCooldown());
         }
 
         private IEnumerator AbilityOnCooldown(Ability ability, int abilityNumber)
@@ -70,6 +79,18 @@ namespace ProjectScarlet
             }            
 
             _abilityAvailability[abilityNumber] = true;
+        }
+
+        private IEnumerator StartAbilityCooldown()
+        {
+            _canCast = false;
+            AbilityCountDown = _abilityCooldown;
+            while(AbilityCountDown > 0)
+            {
+                AbilityCountDown -= Time.deltaTime;
+                yield return null;
+            }            
+            _canCast = true;
         }
     }
 }

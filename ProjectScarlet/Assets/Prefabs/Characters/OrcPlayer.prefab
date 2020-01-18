@@ -2658,7 +2658,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2845179358243759203}
   - component: {fileID: 1286860770}
-  - component: {fileID: 1286860768}
   - component: {fileID: 1286860766}
   - component: {fileID: 7365003833589783142}
   - component: {fileID: 1286860767}
@@ -2668,6 +2667,7 @@ GameObject:
   - component: {fileID: 1286860773}
   - component: {fileID: 1286860775}
   - component: {fileID: 4866538761646455915}
+  - component: {fileID: 876503970582494487}
   m_Layer: 8
   m_Name: OrcPlayer
   m_TagString: Player
@@ -2706,20 +2706,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &1286860768
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5786872404005003082}
-  m_Material: {fileID: 13400000, guid: 6eb9b067cd6939843904389cc0810059, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &1286860766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2735,6 +2721,7 @@ MonoBehaviour:
   _currentHealth: 1
   _maxHealth: 0
   _experience: {fileID: 0}
+  _modifier: 1
 --- !u!114 &7365003833589783142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2836,7 +2823,7 @@ MonoBehaviour:
   _rightHand: {fileID: 1569482182633549029}
   _bothHand: {fileID: 1569482182633549029}
   _attackPoint: {fileID: 0}
-  _currentWeapon: {fileID: 11400000, guid: 468477498a5e67b4987d36c284a24b9f, type: 2}
+  _currentWeapon: {fileID: 11400000, guid: e4118e524dcba3f4eacbb6cea7414a14, type: 2}
   _spawnedWeapon: {fileID: 0}
   _animator: {fileID: 0}
   _nextAttack: 0
@@ -2872,6 +2859,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _abilities:
   - {fileID: 11400000, guid: e9a9254644119564a9a12e717ad61035, type: 2}
-  - {fileID: 11400000, guid: efbe5f4696e2b17409c147e5992ca1a8, type: 2}
-  - {fileID: 11400000, guid: ba240b3d001933142a4b9a68e279e78c, type: 2}
-  - {fileID: 11400000, guid: 18c98c9a7419c02498f3317a9d26d1c4, type: 2}
+  - {fileID: 11400000, guid: e13ce5cae06e6bb4d863d69b459d4aa8, type: 2}
+  - {fileID: 11400000, guid: fa137ecf0e4193c4aa62d8515fb1d08d, type: 2}
+  - {fileID: 11400000, guid: 6a7cf91fe8db5064595415a37ed5410c, type: 2}
+  _canCast: 1
+  _abilityCooldown: 1.5
+  _abilityCountDown: 0
+--- !u!136 &876503970582494487
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5786872404005003082}
+  m_Material: {fileID: 13400000, guid: 6eb9b067cd6939843904389cc0810059, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}

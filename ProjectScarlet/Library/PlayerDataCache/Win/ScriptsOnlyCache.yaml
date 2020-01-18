@@ -40,14 +40,11 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -120,73 +117,73 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10020}
     - Class: 114
-      Script: {instanceID: 10094}
+      Script: {instanceID: 10056}
     - Class: 114
-      Script: {instanceID: 10164}
+      Script: {instanceID: 10096}
     - Class: 114
-      Script: {instanceID: 10262}
+      Script: {instanceID: 10166}
     - Class: 114
-      Script: {instanceID: 10294}
+      Script: {instanceID: 10264}
     - Class: 114
-      Script: {instanceID: 10380}
+      Script: {instanceID: 10296}
     - Class: 114
-      Script: {instanceID: 10408}
+      Script: {instanceID: 10382}
     - Class: 114
-      Script: {instanceID: 10420}
+      Script: {instanceID: 10410}
     - Class: 114
-      Script: {instanceID: 10440}
+      Script: {instanceID: 10422}
     - Class: 114
-      Script: {instanceID: 10524}
+      Script: {instanceID: 10442}
     - Class: 114
-      Script: {instanceID: 10534}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10544}
+      Script: {instanceID: 10536}
     - Class: 114
-      Script: {instanceID: 10548}
+      Script: {instanceID: 10546}
     - Class: 114
-      Script: {instanceID: 10562}
+      Script: {instanceID: 10550}
     - Class: 114
-      Script: {instanceID: 10650}
+      Script: {instanceID: 10564}
     - Class: 114
-      Script: {instanceID: 10664}
+      Script: {instanceID: 10652}
     - Class: 114
-      Script: {instanceID: 10706}
+      Script: {instanceID: 10666}
     - Class: 114
-      Script: {instanceID: 10734}
+      Script: {instanceID: 10708}
     - Class: 114
-      Script: {instanceID: 10854}
+      Script: {instanceID: 10736}
     - Class: 114
-      Script: {instanceID: 10876}
+      Script: {instanceID: 10856}
     - Class: 114
-      Script: {instanceID: 10882}
+      Script: {instanceID: 10878}
     - Class: 114
-      Script: {instanceID: 10960}
+      Script: {instanceID: 10884}
     - Class: 114
-      Script: {instanceID: 10970}
+      Script: {instanceID: 10962}
     - Class: 114
-      Script: {instanceID: 10978}
+      Script: {instanceID: 10972}
     - Class: 114
-      Script: {instanceID: 11040}
+      Script: {instanceID: 10980}
     - Class: 114
-      Script: {instanceID: 11088}
+      Script: {instanceID: 11042}
     - Class: 114
-      Script: {instanceID: 11098}
+      Script: {instanceID: 11090}
     - Class: 114
-      Script: {instanceID: 11144}
+      Script: {instanceID: 11100}
     - Class: 114
-      Script: {instanceID: 11150}
+      Script: {instanceID: 11146}
     - Class: 114
-      Script: {instanceID: 11206}
+      Script: {instanceID: 11152}
     - Class: 114
-      Script: {instanceID: 11254}
+      Script: {instanceID: 11208}
     - Class: 114
-      Script: {instanceID: 11422}
+      Script: {instanceID: 11256}
     - Class: 114
-      Script: {instanceID: 11516}
+      Script: {instanceID: 11424}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11518}
     - Class: 114
-      Script: {instanceID: 121840}
+      Script: {instanceID: 11572}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -404,6 +401,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: db65e0ac04650bcc8d81960c12fea139
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DeathScreen
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -890,12 +893,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 7cde06fa984c00cb42f9a30ef7832569
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DeathScreen
   platform: 5
   scenePathNames:
   - Assets/Scenes/Gauntlet.unity

@@ -17,6 +17,7 @@ namespace ProjectScarlet
         public Weapon CurrentWeapon { get { return _currentWeapon; } private set { _currentWeapon = value; } }
         public GameObject SpawnedWeapon { get { return _spawnedWeapon; } private set { _spawnedWeapon = value; } }
         public float NextAttack { get { return _nextAttack;  } set { _nextAttack = value; } }
+        public Transform AttackPoint { get { return _attackPoint; } private set { _attackPoint = value; } }
 
         private void Awake()
         {
@@ -28,7 +29,7 @@ namespace ProjectScarlet
             if(CurrentWeapon != null)
             {
                 SpawnedWeapon = CurrentWeapon.Spawn(_rightHand, _leftHand, _animator);
-                _attackPoint = SpawnedWeapon.GetComponentInChildren<Transform>();
+                AttackPoint = SpawnedWeapon.GetComponentInChildren<Transform>();
             }
 
             NextAttack = 0f;
@@ -41,8 +42,8 @@ namespace ProjectScarlet
 
         private void OnDrawGizmos()
         {
-            if(_attackPoint != null)
-                Gizmos.DrawWireSphere(_attackPoint.position, CurrentWeapon.AttackRange);
+            if(AttackPoint != null)
+                Gizmos.DrawWireSphere(AttackPoint.position, CurrentWeapon.AttackRange);
         }
     }
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf45464aec947f9448ee79014c11192d, type: 3}
+  m_Name: Smash
+  m_EditorClassIdentifier: 
+  _name: Smash
+  _cooldown: 8
+  _type: 1
+  _countdown: 1.8261453
+  _icon: {fileID: 21300000, guid: ed97e1de596fad74fbdfde28c90fa126, type: 3}
+  _clip: {fileID: -203655887218126122, guid: 1d76e416b19fc154d800ab5209725712, type: 3}
+  _keyCode: 51
+  _range: 10
+  _damage: 75

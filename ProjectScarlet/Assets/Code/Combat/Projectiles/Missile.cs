@@ -24,7 +24,7 @@ namespace ProjectScarlet
             _targetCollider = Target.gameObject.GetComponent<Collider>();
         }
 
-        public override void Launch(Transform launchPostition)
+        public override void Launch(Transform launchPostition, float multiplier = 1)
         {
         }
 

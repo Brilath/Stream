@@ -18,7 +18,7 @@ namespace ProjectScarlet
 
         public bool CanMove { get { return canMove; } set { canMove = value; } }
 
-        private void Awake() 
+        private void Awake()
         {
             _characterInput = GetComponent<ICharacterInput>();
             _rigidbody = GetComponent<Rigidbody>();
@@ -32,32 +32,21 @@ namespace ProjectScarlet
 
         }
 
-        private void OnEnable() 
+        private void OnEnable()
         {
             CanMove = true;
         }
 
         private void Update()
         {
-            
-            if(_settings.MoveDirection.magnitude > 0)
-                _settings.CurrentSpeed = Mathf.MoveTowards(_settings.CurrentSpeed, _settings.MaxSpeed, ChangeMoveSpeed()/2);
+
+            if (_settings.MoveDirection.magnitude > 0)
+                _settings.CurrentSpeed = Mathf.MoveTowards(_settings.CurrentSpeed, _settings.MaxSpeed, ChangeMoveSpeed() / 2);
             else
                 _settings.CurrentSpeed = Mathf.MoveTowards(_settings.CurrentSpeed, 0f, ChangeMoveSpeed());
-
-            //_transform.position = Vector3.MoveTowards(_transform.position, 
-            //    _settings.MoveDirection + transform.position, ChangeMoveSpeed());
-
-            //_transform.Translate(_settings.MoveDirection * Time.deltaTime, Space.World);
-
-            //float xLerp = Mathf.Lerp(_transform.position.x, _transform.position.x + _settings.MoveDirection.x, Time.deltaTime);
-            //float yLerp = Mathf.Lerp(_transform.position.y, _transform.position.y + _settings.MoveDirection.y, Time.deltaTime);
-            //float zlerp = Mathf.Lerp(_transform.position.z, _transform.position.z +_settings.MoveDirection.z, Time.deltaTime);
-
-            //_transform.position = new Vector3(xLerp, yLerp, zlerp);
         }
 
-        private void FixedUpdate() 
+        private void FixedUpdate()
         {
             Vector3 velocity = _rigidbody.velocity;
             float rotationChangeSpeed = _settings.RotationSpeed * Time.deltaTime;
@@ -73,7 +62,7 @@ namespace ProjectScarlet
 
             if (_settings.MoveDirection.magnitude > 0.1)
             {
-                _transform.rotation = Quaternion.Slerp(_transform.rotation, 
+                _transform.rotation = Quaternion.Slerp(_transform.rotation,
                     Quaternion.LookRotation(_settings.MoveDirection), rotationChangeSpeed);
             }
 
@@ -87,7 +76,7 @@ namespace ProjectScarlet
 
         private void CheckVertical()
         {
-            if(_transform.position.y >= _settings.JumpHeight)
+            if (_transform.position.y >= _settings.JumpHeight)
             {
                 _settings.VerticalDirection = -_settings.JumpPower;
             }
@@ -105,7 +94,7 @@ namespace ProjectScarlet
             bool _isGrounded = false;
             float maxRayDistance = _collider.bounds.extents.y + 0.00000001f;
 
-            if(Physics.Raycast(_collider.bounds.center, -Vector3.up, out hit, maxRayDistance))
+            if (Physics.Raycast(_collider.bounds.center, -Vector3.up, out hit, maxRayDistance))
             {
                 _isGrounded = true;
             }
@@ -119,8 +108,8 @@ namespace ProjectScarlet
         }
 
         public void Move()
-        {   
-            
+        {
+
         }
 
         public void Stop()
@@ -134,9 +123,6 @@ namespace ProjectScarlet
 
             if (isSprinting)
             {
-                //Debug.Log($"Base speed: { _settings.BaseSpeed}");
-                //Debug.Log($"Sprint Multiplier: {_settings.SprintMultiplier}");
-
                 _settings.MaxSpeed = _settings.BaseSpeed * _settings.SprintMultiplier;
             }
             else
@@ -147,7 +133,7 @@ namespace ProjectScarlet
 
         public void Jump()
         {
-            if(!isJumping)
+            if (!isJumping)
             {
                 _settings.VerticalDirection = _settings.JumpPower;
                 isJumping = true;

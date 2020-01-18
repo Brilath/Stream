@@ -8,8 +8,9 @@ namespace ProjectScarlet
     {
         [SerializeField] private float _lifeSpan = 3f;
 
-        public override void Launch(Transform launchPostition)
+        public override void Launch(Transform launchPostition, float multiplier = 1)
         {
+            _damage *= multiplier;
             GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
             Destroy(gameObject, _lifeSpan);
         }

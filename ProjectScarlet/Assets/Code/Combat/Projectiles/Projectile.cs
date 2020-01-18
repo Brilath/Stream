@@ -17,15 +17,18 @@ namespace ProjectScarlet
         }
 
 
-        public abstract void Launch(Transform launchPostition);
+        public abstract void Launch(Transform launchPostition, float multiplier = 1);
 
         private void OnTriggerEnter(Collider other)
         {
 
             Health targetHealth = other.GetComponent<Health>();
             int layer = other.gameObject.layer;
+            
+            if(!targetHealth.enabled) Destroy(this.gameObject);
 
             if (targetHealth != null &&
+                targetHealth.enabled &&               
                 CanAttack(layer))
             {
                 targetHealth.ModifyHealth(-_damage);

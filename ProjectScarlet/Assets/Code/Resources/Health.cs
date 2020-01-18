@@ -11,6 +11,7 @@ namespace ProjectScarlet
         [SerializeField] private float _currentHealth = 1f;
         [SerializeField] private float _maxHealth;
         [SerializeField] private Experience _experience;
+        [SerializeField] private float _modifier;
 
         public float CurrentHealth {  get { return _currentHealth; } private set { _currentHealth = value;  } }
 
@@ -23,7 +24,7 @@ namespace ProjectScarlet
         private void Awake()
         {
             _experience = GetComponent<Experience>();
-
+            _modifier = 1;
             if(_experience != null)
             {
                 _experience.OnLevelUp += HandleLevelUp;
@@ -38,7 +39,7 @@ namespace ProjectScarlet
         private void OnEnable()
         {
             SetupHealth();
-            _experience = GetComponent<Experience>();
+            _experience = GetComponent<Experience>();            
 
             if (_experience != null)
             {
@@ -58,14 +59,20 @@ namespace ProjectScarlet
         public void SetupHealth()
         {
             CurrentHealth = GetBaseHealth();
+            _modifier = 1;
             OnHealthAdded(this);
-            //OnHealthPctChange(CurrentHealth / GetBaseHealth());
-            //OnHeal();
         }
 
         public void ModifyHealth(float amount)
         {
-            CurrentHealth += amount;
+            if(amount > 0)
+            {
+                CurrentHealth += amount;
+            }
+            else
+            {
+                CurrentHealth += amount * _modifier;
+            }
 
             CurrentHealth = Mathf.Clamp(CurrentHealth, 0, GetBaseHealth());
 
@@ -93,6 +100,16 @@ namespace ProjectScarlet
             {
                 OnDamage();
             }
+        }
+
+        public void SetModifier(float modifier)
+        {
+            _modifier = modifier;
+        }
+
+        public float GetModifier()
+        {
+            return _modifier;
         }
 
         private void HandleLevelUp()
