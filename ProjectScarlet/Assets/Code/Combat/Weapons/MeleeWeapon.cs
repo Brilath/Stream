@@ -14,7 +14,7 @@ namespace ProjectScarlet
             Type = WeaponType.Melee;
         }
 
-        public override void Attack(Transform attackPoint)
+        public override void Attack(Transform attackPoint, float modifier)
         {
             Collider[] enemies = Physics.OverlapSphere(attackPoint.position, 
                     AttackRange, AttackLayer);
@@ -30,7 +30,7 @@ namespace ProjectScarlet
                 if(enemyHealth != null)
                 {
                     Debug.Log("Doing Damage");
-                    enemyHealth.ModifyHealth(-WeaponDamage);
+                    enemyHealth.ModifyHealth(-WeaponDamage * modifier);
                 }
             }
         }

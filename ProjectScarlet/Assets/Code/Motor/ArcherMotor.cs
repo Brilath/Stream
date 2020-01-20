@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcherMotor : MonoBehaviour
+public class ArcherMotor : IMotor
 {
 
     [SerializeField] private float _turnSpeed = 10f;

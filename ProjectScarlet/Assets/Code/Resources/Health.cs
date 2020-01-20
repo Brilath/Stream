@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace ProjectScarlet
@@ -14,9 +15,10 @@ namespace ProjectScarlet
         [SerializeField] private float _modifier;
 
         public float CurrentHealth {  get { return _currentHealth; } private set { _currentHealth = value;  } }
+        public float MaxHealth { get { return _maxHealth;} private set { _maxHealth = value; } }
+        public float Modifier { get { return _modifier; } set { _modifier = value; } }
 
         public event Action<float> OnHealthPctChange = delegate { };
-
         public event Action OnDeath = delegate { };
         public event Action OnDamage = delegate { };
         public event Action OnHeal = delegate { };
@@ -24,7 +26,8 @@ namespace ProjectScarlet
         private void Awake()
         {
             _experience = GetComponent<Experience>();
-            _modifier = 1;
+            Modifier = 1;
+
             if(_experience != null)
             {
                 _experience.OnLevelUp += HandleLevelUp;
@@ -39,7 +42,7 @@ namespace ProjectScarlet
         private void OnEnable()
         {
             SetupHealth();
-            _experience = GetComponent<Experience>();            
+            _experience = GetComponent<Experience>();        
 
             if (_experience != null)
             {
@@ -53,19 +56,20 @@ namespace ProjectScarlet
 
         public void Update()
         {
-            _maxHealth = GetBaseHealth();
+            MaxHealth = GetBaseHealth();
         }
 
         public void SetupHealth()
         {
             CurrentHealth = GetBaseHealth();
             _modifier = 1;
+            
             OnHealthAdded(this);
         }
 
         public void ModifyHealth(float amount)
         {
-            if(amount > 0)
+            if(amount >= 0)
             {
                 CurrentHealth += amount;
             }
@@ -100,16 +104,6 @@ namespace ProjectScarlet
             {
                 OnDamage();
             }
-        }
-
-        public void SetModifier(float modifier)
-        {
-            _modifier = modifier;
-        }
-
-        public float GetModifier()
-        {
-            return _modifier;
         }
 
         private void HandleLevelUp()

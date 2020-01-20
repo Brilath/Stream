@@ -7,7 +7,7 @@ namespace ProjectScarlet
     public abstract class Spawner : MonoBehaviour
     {
         [SerializeField] protected bool _playerSpawner = false;
-        [SerializeField] protected List<GameObject> units;
+        [SerializeField] protected List<GameObject> _units;
         [SerializeField] protected List<GameObject> _spawnedUnits = new List<GameObject>();
         [SerializeField] protected List<GameObject> _availableUnits = new List<GameObject>();
         [SerializeField] protected GameObject _availableUnit;
@@ -27,7 +27,7 @@ namespace ProjectScarlet
 
         protected IEnumerator Spawn()
         {
-            foreach (GameObject unit in units)
+            foreach (GameObject unit in _units)
             {
                 // Check if unit is available to spawn
                 if(IsUnitAvailable(unit))

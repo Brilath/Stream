@@ -6,7 +6,7 @@ using System;
 
 namespace ProjectScarlet
 {
-    public class NPCMotor : MonoBehaviour
+    public class NPCMotor : IMotor
     {
         [SerializeField] private float _maxSpeed = 3.25f;
         [SerializeField] private float _turnSpeed = 1000f;
@@ -28,8 +28,8 @@ namespace ProjectScarlet
             _transform = GetComponent<Transform>();
             _animator = GetComponentInChildren<Animator>();
             _startPosition = transform.position;
-
             CanMove = true;
+            Modifier = 1;
         }
 
         private void OnEnable() 
@@ -50,7 +50,7 @@ namespace ProjectScarlet
             if (CanMove)
             {
                 _navMeshAgent.destination = destination;
-                _navMeshAgent.speed = _maxSpeed;
+                _navMeshAgent.speed = _maxSpeed * Modifier;
                 _navMeshAgent.isStopped = false;
             }
         }

@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrcWarrior
       objectReference: {fileID: 0}
+    - target: {fileID: 1286860773, guid: 38d7d05851d4c7c4087a9cf1e9c5f284, type: 3}
+      propertyPath: _currentWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 468477498a5e67b4987d36c284a24b9f,
+        type: 2}
     - target: {fileID: 2845179358243759203, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,22 +72,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.035
       objectReference: {fileID: 0}
-    - target: {fileID: 1286860773, guid: 38d7d05851d4c7c4087a9cf1e9c5f284, type: 3}
-      propertyPath: _currentWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 468477498a5e67b4987d36c284a24b9f,
-        type: 2}
     - target: {fileID: 4866538761646455915, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}
       propertyPath: _abilities.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: efbe5f4696e2b17409c147e5992ca1a8,
+      objectReference: {fileID: 11400000, guid: 281652f949e747142b91fc21fbd88ab8,
         type: 2}
     - target: {fileID: 4866538761646455915, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}
       propertyPath: _abilities.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 281652f949e747142b91fc21fbd88ab8,
+      objectReference: {fileID: 11400000, guid: 10cfde93b28aaa042998562e5aaa1d2d,
         type: 2}
+    - target: {fileID: 4866538761646455915, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
+        type: 3}
+      propertyPath: _abilities.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: d558dc99081f1e54f8dce0d73bf68b1e,
+        type: 2}
+    - target: {fileID: 4616190909511071943, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38d7d05851d4c7c4087a9cf1e9c5f284, type: 3}

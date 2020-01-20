@@ -13,15 +13,18 @@ namespace ProjectScarlet
         [SerializeField] private GameObject _spawnedWeapon;
         [SerializeField] private Animator _animator;
         [SerializeField] private float _nextAttack;
+        [SerializeField] private float _modifier;
 
         public Weapon CurrentWeapon { get { return _currentWeapon; } private set { _currentWeapon = value; } }
         public GameObject SpawnedWeapon { get { return _spawnedWeapon; } private set { _spawnedWeapon = value; } }
         public float NextAttack { get { return _nextAttack;  } set { _nextAttack = value; } }
         public Transform AttackPoint { get { return _attackPoint; } private set { _attackPoint = value; } }
+        public float Modifier { get { return _modifier; } set { _modifier = value; } }
 
         private void Awake()
         {
             _animator = GetComponentInChildren<Animator>();
+            Modifier = 1;
         }
 
         void Start()

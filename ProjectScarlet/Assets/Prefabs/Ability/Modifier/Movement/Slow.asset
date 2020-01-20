@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139a89b4d1db15f40966d6b17655f384, type: 3}
+  m_Name: Slow
+  m_EditorClassIdentifier: 
+  _name: Slow
+  _cooldown: 20
+  _type: 3
+  _countdown: -0.006323723
+  _icon: {fileID: 21300000, guid: 27ca32c1f6077cc42bbae4a7a36f20fb, type: 3}
+  _clip: {fileID: -203655887218126122, guid: 3fcddc8735e5bf94ab7d0e52e77b4600, type: 3}
+  _keyCode: 50
+  _modifier: 0.3
+  _modifiedTime: 5
+  _range: 10
+  _buff: 0

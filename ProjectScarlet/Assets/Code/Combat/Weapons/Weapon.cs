@@ -34,7 +34,7 @@ namespace ProjectScarlet
             WeaponName = "New Weapon";            
         }
 
-        public abstract void Attack(Transform attackPoint);
+        public abstract void Attack(Transform attackPoint, float modifier);
 
 
         public GameObject Spawn(Transform rightHand, Transform leftHand, Animator animator)

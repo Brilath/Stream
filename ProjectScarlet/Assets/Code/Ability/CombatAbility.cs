@@ -7,11 +7,9 @@ namespace ProjectScarlet
 {
     public abstract class CombatAbility : Ability
     {
-        [SerializeField] protected float _range = 10;
-        [SerializeField] protected float _damage = 75;
+        [SerializeField] private float _castTime = 1;
 
-        public float Range { get { return _range; } protected set { _range = value; } }
-        public float Damage { get { return _damage; } protected set { _damage = value; } }
+        public float CastTime { get { return _castTime; } protected set { _castTime = value; } }
 
         public CombatAbility()
         {

@@ -5,6 +5,7 @@ namespace ProjectScarlet
         Movement,
         Combat,
         Defensive,
+        Utility,
         Ultimate
     }
 }

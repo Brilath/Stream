@@ -33,6 +33,12 @@ namespace ProjectScarlet
             }
         }
 
+        private void OnDestroy() 
+        {
+            Health.OnHealthAdded -= AddHealthBar;
+            Health.OnHealthRemoved -= RemoveHealthBar;
+        }
+
         private bool InViewDistance(Health health)
         {
             if (player == null) return false;

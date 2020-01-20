@@ -31,7 +31,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 5463780318617440889}
+  - {fileID: 4703559132212535533}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 6912421966525406213, guid: 007ee75847b335044a8cd4f4303df3e7,
     type: 3}
+  player: {fileID: 0}
+  viewDistance: 25
 --- !u!1001 &4703559132212540544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -238,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 007ee75847b335044a8cd4f4303df3e7, type: 3}
---- !u!224 &5463780318617440889 stripped
+--- !u!224 &4703559132212535533 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 762613965365978873, guid: 007ee75847b335044a8cd4f4303df3e7,
     type: 3}

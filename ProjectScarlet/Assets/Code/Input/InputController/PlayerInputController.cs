@@ -82,7 +82,7 @@ namespace ProjectScarlet
             
             yield return new WaitForSeconds(seconds);
 
-            weapon.Attack(attackPoint);
+            weapon.Attack(attackPoint, _fighter.Modifier);
 
             motor.CanMove = true;
         }

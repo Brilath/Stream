@@ -12,6 +12,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrcArcher
       objectReference: {fileID: 0}
+    - target: {fileID: 1286860772, guid: 38d7d05851d4c7c4087a9cf1e9c5f284, type: 3}
+      propertyPath: _characterClass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286860772, guid: 38d7d05851d4c7c4087a9cf1e9c5f284, type: 3}
+      propertyPath: _progression
+      value: 
+      objectReference: {fileID: 11400000, guid: 043f15c573f74934890cfdb6ec897eda,
+        type: 2}
     - target: {fileID: 2845179358243759203, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -77,7 +86,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _abilities.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: e277b4ea3bdd10246989d645605f880e,
+      objectReference: {fileID: 11400000, guid: 43075465d43d89448b92571566c6554d,
         type: 2}
     - target: {fileID: 4866538761646455915, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}
@@ -91,5 +100,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 18d140fffe9122e448bee965a8e5b6c4,
         type: 2}
+    - target: {fileID: 4616190909511066089, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616190909511079075, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616190909510852049, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616190909511096345, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616190909511102917, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616190909511081045, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38d7d05851d4c7c4087a9cf1e9c5f284, type: 3}

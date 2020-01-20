@@ -15,7 +15,7 @@ MonoBehaviour:
   _name: Dash
   _cooldown: 10
   _type: 0
-  _countdown: 6.0591936
+  _countdown: -0.01599688
   _icon: {fileID: 21300000, guid: acbd71afd67ffe041babb5881004aa75, type: 3}
   _clip: {fileID: -203655887218126122, guid: a0fea4d22745a474299aac6cabe55af4, type: 3}
   _keyCode: 49

@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - ArcherMotor
     - AttackPath
     - DeathScreen
+    - MainMenuController
     - ProjectScarlet.AIInputController
     - ProjectScarlet.AbilityIcon
     - ProjectScarlet.AnimationController
@@ -16,15 +17,17 @@ ScriptsOnlyBuild:
     - ProjectScarlet.CharacterMotor
     - ProjectScarlet.CharacterProgression
     - ProjectScarlet.CharacterSettings
-    - ProjectScarlet.CombatAbility
     - ProjectScarlet.ConstantSpawner
     - ProjectScarlet.Damage
+    - ProjectScarlet.DefensiveModifierAbility
     - ProjectScarlet.Experience
     - ProjectScarlet.Fighter
     - ProjectScarlet.Heal
     - ProjectScarlet.Health
     - ProjectScarlet.HealthBar
     - ProjectScarlet.HealthBarController
+    - ProjectScarlet.HealthRegeneration
+    - ProjectScarlet.MeleeCombatAbility
     - ProjectScarlet.MeleeWeapon
     - ProjectScarlet.Missile
     - ProjectScarlet.MouseLock
@@ -34,17 +37,22 @@ ScriptsOnlyBuild:
     - ProjectScarlet.OnDeathSpawner
     - ProjectScarlet.PlayerInputController
     - ProjectScarlet.PlayerKeybinding
+    - ProjectScarlet.PlayerSpawner
+    - ProjectScarlet.RangedCombatAbility
     - ProjectScarlet.RangedWeapon
     - ProjectScarlet.Respawn
     - ProjectScarlet.UIController
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -53,6 +61,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Outline
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Gauntlet.unity:
@@ -119,8 +128,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10056}
     - Class: 114
-      Script: {instanceID: 10096}
-    - Class: 114
       Script: {instanceID: 10166}
     - Class: 114
       Script: {instanceID: 10264}
@@ -153,37 +160,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10736}
     - Class: 114
-      Script: {instanceID: 10856}
+      Script: {instanceID: 10838}
     - Class: 114
-      Script: {instanceID: 10878}
+      Script: {instanceID: 10858}
     - Class: 114
-      Script: {instanceID: 10884}
+      Script: {instanceID: 10880}
     - Class: 114
-      Script: {instanceID: 10962}
+      Script: {instanceID: 10886}
     - Class: 114
-      Script: {instanceID: 10972}
+      Script: {instanceID: 10896}
     - Class: 114
-      Script: {instanceID: 10980}
+      Script: {instanceID: 10946}
     - Class: 114
-      Script: {instanceID: 11042}
+      Script: {instanceID: 10968}
     - Class: 114
-      Script: {instanceID: 11090}
+      Script: {instanceID: 10978}
     - Class: 114
-      Script: {instanceID: 11100}
+      Script: {instanceID: 10986}
     - Class: 114
-      Script: {instanceID: 11146}
+      Script: {instanceID: 11048}
+    - Class: 114
+      Script: {instanceID: 11096}
+    - Class: 114
+      Script: {instanceID: 11106}
     - Class: 114
       Script: {instanceID: 11152}
     - Class: 114
-      Script: {instanceID: 11208}
+      Script: {instanceID: 11158}
     - Class: 114
-      Script: {instanceID: 11256}
+      Script: {instanceID: 11214}
     - Class: 114
-      Script: {instanceID: 11424}
+      Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11518}
+      Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 11572}
+      Script: {instanceID: 11470}
+    - Class: 114
+      Script: {instanceID: 11526}
+    - Class: 114
+      Script: {instanceID: 11580}
+    - Class: 114
+      Script: {instanceID: 66448}
+    - Class: 114
+      Script: {instanceID: 361862}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -232,10 +251,59 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 1953259897
       Script: {instanceID: 0}
+    Assets/Scenes/MainMenu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9690}
+    - Class: 114
+      Script: {instanceID: 9860}
+    - Class: 114
+      Script: {instanceID: 9902}
+    - Class: 114
+      Script: {instanceID: 10296}
+    - Class: 114
+      Script: {instanceID: 10666}
+    - Class: 114
+      Script: {instanceID: 11158}
+    - Class: 114
+      Script: {instanceID: 11526}
+    - Class: 114
+      Script: {instanceID: 610834}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: f8f24541454cfb2b1bc061e0d630c783
+      Hash: 1532185574420118858930d4d01caa99
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: CharacterAbilityProcessor
@@ -245,12 +313,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DefensiveAbility
   - hash:
       serializedVersion: 2
       Hash: 724213ebbc9089cd580b89fcfb995bb0
@@ -283,7 +345,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 08b92989ef3ba0e6be25da939a6abdc7
+      Hash: bf91db1d5b7455c1832bfefea317852a
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: Health
@@ -421,12 +483,6 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
-      Hash: e47942be66e9eafd1c5973d51d8c76f4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: ProjectScarlet
-    className: CombatAbility
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -439,7 +495,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 118680bca3cfd4584ffe9c5ec1fd15c0
+      Hash: 47a68b54e36ad4e0e4e82558cf8f4c57
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: ConstantSpawner
@@ -451,7 +507,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 6e8aca0780a8745aa09702022e10ab86
+      Hash: 385b25383fda2da3879eec6ab3800aff
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: OneTimeSpawner
@@ -523,7 +579,7 @@ ScriptsOnlyBuild:
     className: Experience
   - hash:
       serializedVersion: 2
-      Hash: 118680bca3cfd4584ffe9c5ec1fd15c0
+      Hash: 47a68b54e36ad4e0e4e82558cf8f4c57
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: OnDeathSpawner
@@ -553,7 +609,7 @@ ScriptsOnlyBuild:
     className: Fighter
   - hash:
       serializedVersion: 2
-      Hash: 2499fd5c8a47fd03d81e5baed92cf4c9
+      Hash: 1757dda4a4d4ce73fd5749276fc40ef3
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: AbilityIcon
@@ -631,6 +687,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 8476b3b5320b8713f78190895fb33b18
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ProjectScarlet
+    className: RangedCombatAbility
+  - hash:
+      serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -667,6 +729,12 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
+      Hash: dc4075ad0bc3bf5c2ebe1ef69ce896d4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ProjectScarlet
+    className: MeleeCombatAbility
+  - hash:
+      serializedVersion: 2
       Hash: e1300922cc039f41ab46a47f4cb05898
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -683,6 +751,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: Physics2DRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 57ac54d65f98d91fbadb717dc8f63e8c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ProjectScarlet
+    className: DefensiveModifierAbility
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -763,7 +837,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: aec039b1a766c28f8b74a395a0da2f92
+      Hash: 406356d7da3db2161fdef0532ede4657
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: MovementAbility
@@ -847,6 +921,12 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DamageModifierAbility
+  - hash:
+      serializedVersion: 2
       Hash: 2aeeec1b1a144c469cd2d37776bc2315
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -893,7 +973,26 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 0b2c6c674ef41e5c9b1ce90deb65be14
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ProjectScarlet
+    className: PlayerSpawner
+  - hash:
+      serializedVersion: 2
+      Hash: d323451950fda91385dc93c922e7e091
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ProjectScarlet
+    className: HealthRegeneration
+  - hash:
+      serializedVersion: 2
+      Hash: cd744c8e1a93d87e70e5c1aa239de4f2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenuController
   platform: 5
   scenePathNames:
+  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Gauntlet.unity
   playerPath: G:/Builds/ProjectScarlet.exe

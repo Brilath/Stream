@@ -5,10 +5,9 @@ using UnityEngine;
 
 namespace ProjectScarlet
 {
-    [CreateAssetMenu(menuName = "Ability/Modifier Ability", fileName = "Defensive Modifier Ability")]
+    [CreateAssetMenu(menuName = "Ability/Defensive Modifier Ability", fileName = "Defensive Modifier Ability")]
     public class DefensiveModifierAbility : ModifierAbility
     {
-
         public DefensiveModifierAbility()
         {
             Type = AbilityType.Defensive;
@@ -17,19 +16,41 @@ namespace ProjectScarlet
         public override void ProcessAbility(GameObject unit)
         {
             var health = unit.GetComponent<Health>();
-            _orginalModifier = health.GetModifier();
+            if (health == null) return;
 
-            if(health != null)
-                BuffUnit(health);      
+            Collider[] targets = Physics.OverlapSphere(health.transform.position,
+                                                _range);
+
+            foreach (Collider target in targets)
+            {
+                var tarHealth = target.gameObject.GetComponent<Health>();
+                if (tarHealth != null && 
+                    target.gameObject.layer == unit.layer)
+                    _unitOrginalStates.Add(target.gameObject, tarHealth.Modifier);
+            }
+
+            Animator anim = unit.GetComponentInChildren<Animator>();
+
+            if (anim != null)
+                anim.Play(_clip.name);
+
+            BuffUnits();
         }
 
-        protected async void BuffUnit(Health health)
+        protected async void BuffUnits()
         {
-            health.SetModifier(_modifier);
+            foreach (KeyValuePair<GameObject, float> unit in _unitOrginalStates)
+            {
+                unit.Key.GetComponent<Health>().Modifier = _modifier;
+            }
 
             await Task.Delay(_modifiedTime * 1000);
 
-            health.SetModifier(_orginalModifier);
+            foreach (KeyValuePair<GameObject, float> unit in _unitOrginalStates)
+            {
+                unit.Key.GetComponent<Health>().Modifier = unit.Value;
+            }
+            _unitOrginalStates.Clear();
         }
     }
 }

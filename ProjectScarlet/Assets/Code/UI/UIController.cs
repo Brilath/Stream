@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace ProjectScarlet
 {
@@ -35,14 +36,27 @@ namespace ProjectScarlet
         
         void Update()
         {
+            if (_player == null)
+                initialze = false;
 
             if(!initialze)
                 Initialize();
+
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadSceneAsync(0);
+            }
 
         }
 
         private void SetupAbiltyBar()
         {
+            int count = _abilityUI.transform.childCount;
+            for(int i = 0; i < _abilityUI.transform.childCount; i++)
+            {
+                Destroy(_abilityUI.GetChild(i).gameObject);
+            }
+
             foreach(Ability  ability in _abilityProcessor.GetAbilities())
             {
                 var abilityIcon = Instantiate(_abilityUIPrefab, _abilityUI);

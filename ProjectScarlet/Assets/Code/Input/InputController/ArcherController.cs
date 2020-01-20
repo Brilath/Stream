@@ -66,7 +66,7 @@ namespace ProjectScarlet
             yield return new WaitForSeconds(seconds);
 
             weapon.Projectile_.Target = _currentTarget;
-            weapon.Attack(attackPoint);
+            weapon.Attack(attackPoint, _fighter.Modifier);
             //transform.rotation *= Quaternion.Euler(0, -90, 0);
         }
 

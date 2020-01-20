@@ -20,6 +20,7 @@ MonoBehaviour:
   _spawnedWeapon: {fileID: 0}
   _animator: {fileID: 0}
   _nextAttack: 0
+  _modifier: 0
 --- !u!114 &-6769506963727919740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,6 +36,7 @@ MonoBehaviour:
   _currentHealth: 1
   _maxHealth: 0
   _experience: {fileID: 0}
+  _modifier: 0
 --- !u!114 &5282296998333048496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _chaseRange
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6538484670328852732, guid: 211dd99df3d5dba479fdaef86ee60c39,
+        type: 3}
+      propertyPath: _canMove2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2076755999442023552, guid: 211dd99df3d5dba479fdaef86ee60c39,
         type: 3}

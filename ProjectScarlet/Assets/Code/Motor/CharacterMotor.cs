@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ProjectScarlet
 {
     [RequireComponent(typeof(ICharacterInput))]
-    public class CharacterMotor : MonoBehaviour
+    public class CharacterMotor : IMotor
     {
         [SerializeField] private ICharacterInput _characterInput;
         [SerializeField] private Rigidbody _rigidbody;
@@ -25,6 +25,7 @@ namespace ProjectScarlet
             _collider = GetComponent<CapsuleCollider>();
             _transform = GetComponent<Transform>();
             CanMove = true;
+            Modifier = 1;
         }
 
         void Start()
@@ -53,9 +54,9 @@ namespace ProjectScarlet
 
             if (CanMove)
             {
-                velocity.x = Mathf.MoveTowards(velocity.x, _settings.MoveDirection.x, ChangeMoveSpeed());
+                velocity.x = Mathf.MoveTowards(velocity.x, _settings.MoveDirection.x * Modifier, ChangeMoveSpeed());
                 velocity.y = Mathf.MoveTowards(velocity.y, _settings.VerticalDirection, ChangeMoveSpeed());
-                velocity.z = Mathf.MoveTowards(velocity.z, _settings.MoveDirection.z, ChangeMoveSpeed());
+                velocity.z = Mathf.MoveTowards(velocity.z, _settings.MoveDirection.z * Modifier, ChangeMoveSpeed());
 
                 _rigidbody.velocity = velocity;
             }

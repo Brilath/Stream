@@ -19,12 +19,12 @@ namespace ProjectScarlet
             DelayTime = 1.5f;
         }
 
-        public override void Attack(Transform attackPoint)
+        public override void Attack(Transform attackPoint, float modifier)
         {
             if(attackPoint != null)
             {
                 var projectile = Instantiate(_projectile, attackPoint.position, attackPoint.rotation);
-                projectile.Launch(attackPoint);
+                projectile.Launch(attackPoint, modifier);
             }
         }
     }
