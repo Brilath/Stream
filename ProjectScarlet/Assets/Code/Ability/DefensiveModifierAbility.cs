@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -44,7 +45,7 @@ namespace ProjectScarlet
                 unit.Key.GetComponent<Health>().Modifier = _modifier;
             }
 
-            await Task.Delay(_modifiedTime * 1000);
+            await Task.Delay(TimeSpan.FromSeconds(_modifiedTime));
 
             foreach (KeyValuePair<GameObject, float> unit in _unitOrginalStates)
             {

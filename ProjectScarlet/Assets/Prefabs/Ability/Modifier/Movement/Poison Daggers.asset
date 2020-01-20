@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139a89b4d1db15f40966d6b17655f384, type: 3}
+  m_Name: Poison Daggers
+  m_EditorClassIdentifier: 
+  _name: 
+  _cooldown: 5
+  _type: 3
+  _countdown: -0.008228062
+  _icon: {fileID: 21300000, guid: f0201919cc795c4438daceff5cecf579, type: 3}
+  _clip: {fileID: -203655887218126122, guid: 16420aa61d4949c428b55bb9b8c92ad0, type: 3}
+  _keyCode: 51
+  _modifier: 0.7
+  _modifiedTime: 3
+  _range: 5
+  _buff: 0

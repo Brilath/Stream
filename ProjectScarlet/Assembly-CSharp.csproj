@@ -51,10 +51,12 @@
      <Compile Include="Assets\Code\Ability\DamageModifierAbility.cs" />
      <Compile Include="Assets\Code\Ability\DefensiveModifierAbility.cs" />
      <Compile Include="Assets\Code\Ability\MeleeCombatAbility.cs" />
+     <Compile Include="Assets\Code\Ability\ModelModifierAbility.cs" />
      <Compile Include="Assets\Code\Ability\ModifierAbility.cs" />
      <Compile Include="Assets\Code\Ability\MovementAbility.cs" />
      <Compile Include="Assets\Code\Ability\MovementModifierAbility.cs" />
      <Compile Include="Assets\Code\Ability\RangedCombatAbility.cs" />
+     <Compile Include="Assets\Code\Ability\TransportAbility.cs" />
      <Compile Include="Assets\Code\Ability\UltimateAbility.cs" />
      <Compile Include="Assets\Code\Animation\AnimationController.cs" />
      <Compile Include="Assets\Code\Camera\CameraOrbit.cs" />

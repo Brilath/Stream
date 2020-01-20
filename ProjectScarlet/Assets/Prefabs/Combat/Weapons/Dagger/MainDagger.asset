@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7297ba293ecb61b4492d0bbdfb579f85, type: 3}
+  m_Name: MainDagger
+  m_EditorClassIdentifier: 
+  _attackRange: 2
+  _attackSpeed: 0.6
+  _delayTime: 0.25
+  _transformRotation: 0
+  _weaponName: Main Hand Dagger
+  _weaponHand: 0
+  _weaponType: 0
+  _weaponPrefab: {fileID: 4145449661624999048, guid: 4b94f53e908a2d04cafaa2c34e6d5406,
+    type: 3}
+  _animatorController: {fileID: 22100000, guid: 82b7b58d0dec4d14fb46727d21ce8bf5,
+    type: 2}
+  _attackLayer:
+    serializedVersion: 2
+    m_Bits: 1536
+  _weaponDamage: 25

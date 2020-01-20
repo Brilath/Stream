@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf45464aec947f9448ee79014c11192d, type: 3}
+  m_Name: Flurry
+  m_EditorClassIdentifier: 
+  _name: Dagger Flurry
+  _cooldown: 12
+  _type: 1
+  _countdown: -0.018271329
+  _icon: {fileID: 21300000, guid: f933294c04c9a3240a6de5b3527b0127, type: 3}
+  _clip: {fileID: -203655887218126122, guid: fd088e0b246c7f949a6ed80b8b1caa0a, type: 3}
+  _keyCode: 50
+  _castTime: 0
+  _range: 3
+  _damage: 75

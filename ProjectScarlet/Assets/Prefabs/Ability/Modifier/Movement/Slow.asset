@@ -18,7 +18,7 @@ MonoBehaviour:
   _countdown: -0.006323723
   _icon: {fileID: 21300000, guid: 27ca32c1f6077cc42bbae4a7a36f20fb, type: 3}
   _clip: {fileID: -203655887218126122, guid: 3fcddc8735e5bf94ab7d0e52e77b4600, type: 3}
-  _keyCode: 50
+  _keyCode: 51
   _modifier: 0.3
   _modifiedTime: 5
   _range: 10

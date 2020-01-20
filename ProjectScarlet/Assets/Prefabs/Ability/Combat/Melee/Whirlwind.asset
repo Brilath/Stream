@@ -15,8 +15,8 @@ MonoBehaviour:
   _name: Whirlwind
   _cooldown: 5
   _type: 1
-  _countdown: -0.009130942
-  _icon: {fileID: 21300000, guid: a0c9b3988004b814ba8fdb24fa30240f, type: 3}
+  _countdown: 1.3681891
+  _icon: {fileID: 21300000, guid: 7da6f9d8760356a4e89c2ec766144eef, type: 3}
   _clip: {fileID: -203655887218126122, guid: 16420aa61d4949c428b55bb9b8c92ad0, type: 3}
   _keyCode: 50
   _castTime: 0

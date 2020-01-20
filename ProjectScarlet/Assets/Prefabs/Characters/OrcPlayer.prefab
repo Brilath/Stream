@@ -4726,6 +4726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2f263046cf38947a6d6f7b8e84f2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _modifier: 0
   _rigidbody: {fileID: 0}
   _collider: {fileID: 0}
   _settings: {fileID: 11400000, guid: dfb23f2a8f21a59478b93d7a73af1cbe, type: 2}

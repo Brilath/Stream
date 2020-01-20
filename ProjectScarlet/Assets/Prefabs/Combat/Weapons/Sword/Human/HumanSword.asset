@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7297ba293ecb61b4492d0bbdfb579f85, type: 3}
+  m_Name: HumanSword
+  m_EditorClassIdentifier: 
+  _attackRange: 3
+  _attackSpeed: 1.5
+  _delayTime: 0.5
+  _transformRotation: 0
+  _weaponName: New Weapon
+  _weaponHand: 0
+  _weaponType: 0
+  _weaponPrefab: {fileID: 1247547531098099625, guid: f04b28516fc02914eae6c24ef0c31f4e,
+    type: 3}
+  _animatorController: {fileID: 22100000, guid: d78383ef8e1bafc4683d9d264f6920d4,
+    type: 2}
+  _attackLayer:
+    serializedVersion: 2
+    m_Bits: 1280
+  _weaponDamage: 25

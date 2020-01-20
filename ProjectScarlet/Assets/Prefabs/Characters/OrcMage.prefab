@@ -24,7 +24,7 @@ PrefabInstance:
     - target: {fileID: 1286860773, guid: 38d7d05851d4c7c4087a9cf1e9c5f284, type: 3}
       propertyPath: _currentWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: 64a9c9927dfae1e49bfe9f474a2f8ee7,
+      objectReference: {fileID: 11400000, guid: c7cfeb0ae5c97264fa4462ce5e389dd9,
         type: 2}
     - target: {fileID: 2845179358243759203, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}
@@ -85,7 +85,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _abilities.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 1b829474736dc9c4588c86f880aa4d08,
+      objectReference: {fileID: 11400000, guid: eec4e999e2747c648a75b6005ac2365b,
         type: 2}
     - target: {fileID: 4866538761646455915, guid: 38d7d05851d4c7c4087a9cf1e9c5f284,
         type: 3}

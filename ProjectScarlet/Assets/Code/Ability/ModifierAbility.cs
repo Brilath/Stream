@@ -8,7 +8,7 @@ namespace ProjectScarlet
     {
         [SerializeField] protected Dictionary<GameObject, float> _unitOrginalStates = new Dictionary<GameObject, float>();
         [SerializeField] protected float _modifier;
-        [SerializeField] protected int _modifiedTime;
+        [SerializeField] protected float _modifiedTime;
         [SerializeField] protected float _range;
     }
 }

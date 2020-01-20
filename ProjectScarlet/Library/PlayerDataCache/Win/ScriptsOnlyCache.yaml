@@ -4,7 +4,6 @@ ScriptsOnlyBuild:
     - ArcherMotor
     - AttackPath
     - DeathScreen
-    - MainMenuController
     - ProjectScarlet.AIInputController
     - ProjectScarlet.AbilityIcon
     - ProjectScarlet.AnimationController
@@ -19,6 +18,7 @@ ScriptsOnlyBuild:
     - ProjectScarlet.CharacterSettings
     - ProjectScarlet.ConstantSpawner
     - ProjectScarlet.Damage
+    - ProjectScarlet.DamageModifierAbility
     - ProjectScarlet.DefensiveModifierAbility
     - ProjectScarlet.Experience
     - ProjectScarlet.Fighter
@@ -30,8 +30,10 @@ ScriptsOnlyBuild:
     - ProjectScarlet.MeleeCombatAbility
     - ProjectScarlet.MeleeWeapon
     - ProjectScarlet.Missile
+    - ProjectScarlet.ModelModifierAbility
     - ProjectScarlet.MouseLock
     - ProjectScarlet.MovementAbility
+    - ProjectScarlet.MovementModifierAbility
     - ProjectScarlet.NPCMotor
     - ProjectScarlet.OldMissile
     - ProjectScarlet.OnDeathSpawner
@@ -41,7 +43,9 @@ ScriptsOnlyBuild:
     - ProjectScarlet.RangedCombatAbility
     - ProjectScarlet.RangedWeapon
     - ProjectScarlet.Respawn
+    - ProjectScarlet.TransportAbility
     - ProjectScarlet.UIController
+    - ProjectScarlet.UltimateAbility
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -91,6 +95,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -110,99 +118,109 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9704}
     - Class: 114
-      Script: {instanceID: 9744}
+      Script: {instanceID: 9746}
     - Class: 114
-      Script: {instanceID: 9838}
+      Script: {instanceID: 9846}
     - Class: 114
-      Script: {instanceID: 9860}
+      Script: {instanceID: 9870}
     - Class: 114
-      Script: {instanceID: 9862}
+      Script: {instanceID: 9872}
     - Class: 114
-      Script: {instanceID: 9902}
+      Script: {instanceID: 9912}
     - Class: 114
-      Script: {instanceID: 9946}
+      Script: {instanceID: 9956}
     - Class: 114
-      Script: {instanceID: 10014}
+      Script: {instanceID: 10026}
     - Class: 114
-      Script: {instanceID: 10020}
+      Script: {instanceID: 10032}
     - Class: 114
-      Script: {instanceID: 10056}
+      Script: {instanceID: 10068}
     - Class: 114
-      Script: {instanceID: 10166}
+      Script: {instanceID: 10082}
     - Class: 114
-      Script: {instanceID: 10264}
+      Script: {instanceID: 10180}
     - Class: 114
-      Script: {instanceID: 10296}
+      Script: {instanceID: 10278}
     - Class: 114
-      Script: {instanceID: 10382}
+      Script: {instanceID: 10292}
     - Class: 114
-      Script: {instanceID: 10410}
+      Script: {instanceID: 10312}
     - Class: 114
-      Script: {instanceID: 10422}
+      Script: {instanceID: 10398}
+    - Class: 114
+      Script: {instanceID: 10428}
     - Class: 114
       Script: {instanceID: 10442}
     - Class: 114
-      Script: {instanceID: 10526}
-    - Class: 114
-      Script: {instanceID: 10536}
+      Script: {instanceID: 10462}
     - Class: 114
       Script: {instanceID: 10546}
     - Class: 114
-      Script: {instanceID: 10550}
+      Script: {instanceID: 10556}
     - Class: 114
-      Script: {instanceID: 10564}
+      Script: {instanceID: 10568}
     - Class: 114
-      Script: {instanceID: 10652}
+      Script: {instanceID: 10572}
     - Class: 114
-      Script: {instanceID: 10666}
+      Script: {instanceID: 10586}
     - Class: 114
-      Script: {instanceID: 10708}
+      Script: {instanceID: 10674}
     - Class: 114
-      Script: {instanceID: 10736}
+      Script: {instanceID: 10688}
     - Class: 114
-      Script: {instanceID: 10838}
+      Script: {instanceID: 10732}
     - Class: 114
-      Script: {instanceID: 10858}
+      Script: {instanceID: 10760}
     - Class: 114
-      Script: {instanceID: 10880}
+      Script: {instanceID: 10862}
     - Class: 114
-      Script: {instanceID: 10886}
+      Script: {instanceID: 10882}
     - Class: 114
-      Script: {instanceID: 10896}
+      Script: {instanceID: 10884}
     - Class: 114
-      Script: {instanceID: 10946}
+      Script: {instanceID: 10906}
     - Class: 114
-      Script: {instanceID: 10968}
+      Script: {instanceID: 10912}
     - Class: 114
-      Script: {instanceID: 10978}
+      Script: {instanceID: 10922}
     - Class: 114
-      Script: {instanceID: 10986}
+      Script: {instanceID: 10972}
     - Class: 114
-      Script: {instanceID: 11048}
+      Script: {instanceID: 10994}
     - Class: 114
-      Script: {instanceID: 11096}
+      Script: {instanceID: 11004}
     - Class: 114
-      Script: {instanceID: 11106}
+      Script: {instanceID: 11012}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11080}
     - Class: 114
-      Script: {instanceID: 11158}
+      Script: {instanceID: 11128}
     - Class: 114
-      Script: {instanceID: 11214}
+      Script: {instanceID: 11138}
     - Class: 114
-      Script: {instanceID: 11262}
+      Script: {instanceID: 11150}
     - Class: 114
-      Script: {instanceID: 11430}
+      Script: {instanceID: 11186}
     - Class: 114
-      Script: {instanceID: 11470}
+      Script: {instanceID: 11192}
     - Class: 114
-      Script: {instanceID: 11526}
+      Script: {instanceID: 11248}
     - Class: 114
-      Script: {instanceID: 11580}
+      Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 66448}
+      Script: {instanceID: 11466}
     - Class: 114
-      Script: {instanceID: 361862}
+      Script: {instanceID: 11506}
+    - Class: 114
+      Script: {instanceID: 11552}
+    - Class: 114
+      Script: {instanceID: 11564}
+    - Class: 114
+      Script: {instanceID: 11618}
+    - Class: 114
+      Script: {instanceID: 323022}
+    - Class: 114
+      Script: {instanceID: 484672}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -251,55 +269,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 1953259897
       Script: {instanceID: 0}
-    Assets/Scenes/MainMenu.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 9690}
-    - Class: 114
-      Script: {instanceID: 9860}
-    - Class: 114
-      Script: {instanceID: 9902}
-    - Class: 114
-      Script: {instanceID: 10296}
-    - Class: 114
-      Script: {instanceID: 10666}
-    - Class: 114
-      Script: {instanceID: 11158}
-    - Class: 114
-      Script: {instanceID: 11526}
-    - Class: 114
-      Script: {instanceID: 610834}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
   scriptHashData:
   - hash:
       serializedVersion: 2
@@ -315,7 +284,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 724213ebbc9089cd580b89fcfb995bb0
+      Hash: c0be5b26853fbafa094841e157db9fee
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: CharacterMotor
@@ -331,6 +300,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: Character
+  - hash:
+      serializedVersion: 2
+      Hash: b41f6a02beff5d31b9210834dce1767e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UICanvasManager
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -351,10 +326,28 @@ ScriptsOnlyBuild:
     className: Health
   - hash:
       serializedVersion: 2
+      Hash: 0e2dcecfc1a59863d6161482eaa244b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: EpicToonFX
+    className: ETFXPitchRandomizer
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PEDestoryTimed
+  - hash:
+      serializedVersion: 2
+      Hash: cd744c8e1a93d87e70e5c1aa239de4f2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenuController
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -373,6 +366,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 46280057aba92e5945195d40246a7bdf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ETFXSceneManager
   - hash:
       serializedVersion: 2
       Hash: 72712369a7c681ad84fc255a5ec0b333
@@ -423,6 +422,12 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: 5058e62971372d10db24fe80294c7a3d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ETFXProjectileScript
+  - hash:
+      serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -469,6 +474,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DeathScreen
+  - hash:
+      serializedVersion: 2
+      Hash: 0b2c6c674ef41e5c9b1ce90deb65be14
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ProjectScarlet
+    className: PlayerSpawner
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -531,6 +542,12 @@ ScriptsOnlyBuild:
     className: HealthBar
   - hash:
       serializedVersion: 2
+      Hash: fb1989c0078ddda3cee9cdb7591f6abe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ProjectScarlet
+    className: MovementModifierAbility
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -567,10 +584,22 @@ ScriptsOnlyBuild:
     className: HealthBarController
   - hash:
       serializedVersion: 2
-      Hash: 3557a8a7fc5d2c77200b46521218d403
+      Hash: b5aaf686465544e9e949e46e293afee1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: EpicToonFX
+    className: ETFXMouseOrbit
+  - hash:
+      serializedVersion: 2
+      Hash: 4e299ef5e6dc15aef8bf983d831d877b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ArcherMotor
+  - hash:
+      serializedVersion: 2
+      Hash: 0912db8419735ecb16044b834208729d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: EpicToonFX
+    className: ETFXLoopScript
   - hash:
       serializedVersion: 2
       Hash: 5fd66ae681f5b7c6f1c3283895aa8ba7
@@ -603,7 +632,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 1b1e6e96868515104e4827e1402e2040
+      Hash: b1841714952f9e37acdb6486dd219cb8
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: Fighter
@@ -613,6 +642,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: AbilityIcon
+  - hash:
+      serializedVersion: 2
+      Hash: e888ef4305b8fac9cd5510fefa0636bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: EpicToonFX
+    className: ETFXFireProjectile
   - hash:
       serializedVersion: 2
       Hash: bf8f26948416347235dc8eefa3ea9e2b
@@ -663,6 +698,12 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: 79566861074b80c5467fa81dddcf4f5a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: EpicToonFX
+    className: ETFXRotation
+  - hash:
+      serializedVersion: 2
       Hash: feb9a5a121d15fa3654d4e50a5233045
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -687,7 +728,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 8476b3b5320b8713f78190895fb33b18
+      Hash: e84ac9aed4adf279b098249460a4ca3b
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: RangedCombatAbility
@@ -697,6 +738,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: InputField
+  - hash:
+      serializedVersion: 2
+      Hash: d323451950fda91385dc93c922e7e091
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ProjectScarlet
+    className: HealthRegeneration
   - hash:
       serializedVersion: 2
       Hash: 1f1dbfa6ebdbfd399f5beb221f342278
@@ -711,7 +758,7 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
-      Hash: 787fb7fbe2cff4591f6f7dcb51e32a24
+      Hash: 6b7509d3dab87dd6a55c0a34cfdc997a
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: NPCMotor
@@ -729,7 +776,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: dc4075ad0bc3bf5c2ebe1ef69ce896d4
+      Hash: c86ff177476a036404138af8401a82ed
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: MeleeCombatAbility
@@ -753,7 +800,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 57ac54d65f98d91fbadb717dc8f63e8c
+      Hash: 0efb43806717a3e77b1046df82e651f2
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: DefensiveModifierAbility
@@ -789,6 +836,18 @@ ScriptsOnlyBuild:
     className: CharacterBaseStats
   - hash:
       serializedVersion: 2
+      Hash: 8e5e00ca42eeebc1eae2f91fabb1ee02
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: EpicToonFX
+    className: ETFXButtonScript
+  - hash:
+      serializedVersion: 2
+      Hash: a4900d574c1d1a9001f0f83b0dddb24d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ParticleEffectsLibrary
+  - hash:
+      serializedVersion: 2
       Hash: 2f0d0675857125b2ce414dcb4df7d1ed
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
@@ -811,6 +870,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AttackPath
+  - hash:
+      serializedVersion: 2
+      Hash: 1afda21003441851313e3fd50b997e84
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ProjectScarlet
+    className: UltimateAbility
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -847,6 +912,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
     className: PlayerInputController
+  - hash:
+      serializedVersion: 2
+      Hash: 2890c468cf196dca883ea02bde96343e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: EpicToonFX
+    className: ETFXLightFade
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -897,6 +968,12 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: 24b2edb739e02ab9678256f4cc52b87d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PEButtonScript
+  - hash:
+      serializedVersion: 2
       Hash: a63fc1a3b035e5a0b5839cd7f7b3086e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -921,9 +998,9 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 0efb43806717a3e77b1046df82e651f2
     assemblyName: Assembly-CSharp.dll
-    namespaceName: 
+    namespaceName: ProjectScarlet
     className: DamageModifierAbility
   - hash:
       serializedVersion: 2
@@ -975,24 +1052,17 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 0b2c6c674ef41e5c9b1ce90deb65be14
+      Hash: 77cf491dd058a9cbb4db3cb98f5ae0c9
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
-    className: PlayerSpawner
+    className: ModelModifierAbility
   - hash:
       serializedVersion: 2
-      Hash: d323451950fda91385dc93c922e7e091
+      Hash: 895dc48f0c9b909b77a370abfea88fd2
     assemblyName: Assembly-CSharp.dll
     namespaceName: ProjectScarlet
-    className: HealthRegeneration
-  - hash:
-      serializedVersion: 2
-      Hash: cd744c8e1a93d87e70e5c1aa239de4f2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MainMenuController
+    className: TransportAbility
   platform: 5
   scenePathNames:
-  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Gauntlet.unity
   playerPath: G:/Builds/ProjectScarlet.exe
